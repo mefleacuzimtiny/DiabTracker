@@ -46,10 +46,10 @@
 // };
 
 struct Record {
-    int Reading;
-    QTime RecentEatingTime;
-    QString Description;
-    QDateTime DateTimeCreation;
+    int Reading = 1;
+    QTime RecentEatingTime = QTime(6,30,0);
+    QString Description = "No Description";
+    QDateTime DateTimeCreation = QDateTime(QDate(2022, 5, 18), QTime(4, 15, 0));
 
     Record(int reading, QTime recent_meal_time, QString desc, QDate date = QDate::currentDate(), QTime time = QTime::currentTime()) {
         Reading = reading;
@@ -110,17 +110,17 @@ struct Record {
         QVBoxLayout* History = window->getHistoryLayout();
 
         QFrame* RecordFrame = new QFrame();
-            QHBoxLayout* newRecord = new QHBoxLayout(RecordFrame); newRecord->setObjectName(newRecord);
+            QHBoxLayout* newRecord = new QHBoxLayout(RecordFrame); newRecord->setObjectName("newRecord");
 
-            QFrame* DetailsFrame = new QFrame();
-                QHBoxLayout* recordDetails = new QHBoxLayout(DetailsFrame);
+            QFrame* DetailsFrame = new QFrame(); DetailsFrame->setObjectName("DetailsFrame");
+                QHBoxLayout* recordDetails = new QHBoxLayout(DetailsFrame); recordDetails->setObjectName("recordDetails");
 
-                QFrame* LabelsFrame = new QFrame();
-                    QVBoxLayout* detailLabels = new QVBoxLayout(LabelsFrame);
+                QFrame* LabelsFrame = new QFrame(); LabelsFrame->setObjectName("LabelsFrame");
+                    QVBoxLayout* detailLabels = new QVBoxLayout(LabelsFrame); detailLabels->setObjectName("LabelsFrame");
 
-                        QLabel* ValueLabel = new QLabel();
-                        QLabel* DescLabel = new QLabel();
-                        QLabel* ValueDateLabel = new QLabel();
+                        QLabel* ValueLabel = new QLabel(); ValueLabel->setObjectName("ValueLabel");
+                        QLabel* DescLabel = new QLabel(); DescLabel->setObjectName("DescLabel");
+                        QLabel* ValueDateLabel = new QLabel(); ValueDateLabel->setObjectName("ValueDateLabel");
 
                         ValueLabel->setText(QString::number(Reading));
                         DescLabel->setText(Description);
@@ -135,8 +135,8 @@ struct Record {
                 recordDetails->insertWidget(0, LabelsFrame);
                 recordDetails->insertSpacerItem(1, spacer);
 
-            QFrame* OptionsFrame = new QFrame();
-                QHBoxLayout* recordOptions = new QHBoxLayout(OptionsFrame);
+            QFrame* OptionsFrame = new QFrame(); OptionsFrame->setObjectName("OptionsFrame");
+                QHBoxLayout* recordOptions = new QHBoxLayout(OptionsFrame); recordOptions->setObjectName("recordOptions");
 
                     QPushButton* btnDelete = new QPushButton("delete");
                     QPushButton* btnEdit = new QPushButton("Edit");

@@ -59,17 +59,49 @@ void MainWindow::on_EditButton_clicked() {
     // TODO: write code to update the labels inside the recordContainer to be the same as the attributes of rec
 
     QObjectList Children = recordContainer->children();
+
     /////////////////////////////////////////////// DEBUGGING AREA /////////////////////////////////////////////
     for (QObject* child : Children) {
         qDebug() << child->objectName() << "\n";
         for (QObject* subchild : child->children()) {
-            qDebug() << subchild->objectName() << "\n";
-            for (QObject* subsubchild : child->children()) {
-                qDebug() << subsubchild->objectName() << "\n";
+            qDebug() << "\t" <<  subchild->objectName() << "\n";
+            for (QObject* subsubchild : subchild->children()) {
+                qDebug() << "\t\t" << subsubchild->objectName() << "\n";
             }
         }
     }
+
+    /* Name Tree:
+        "newRecord"
+
+        "DetailsFrame"
+
+             "recordDetails"
+
+             "LabelsFrame"
+
+                 "LabelsFrame"
+
+                 "ValueLabel"
+
+                 "DescLabel"
+
+                 "ValueDateLabel"
+
+        "OptionsFrame"
+
+             "recordOptions"
+
+             ""
+
+             ""
+    */
     /////////////////////////////////////////// END DEBUGGING AREA //////////////////////////////////////////////
+
+    QLabel* ValueLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(1));
+    QLabel* DescLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(2));
+    QLabel* ValueDateLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(3));
+
 }
 
 
