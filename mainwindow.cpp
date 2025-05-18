@@ -60,15 +60,30 @@ void MainWindow::on_EditButton_clicked() {
 
     QObjectList Children = recordContainer->children();
 
+    QLabel* ValueLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(1));
+    QLabel* DescLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(2));
+    QLabel* ValueDateLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(3));
+
+    ValueLabel->setText(QString::number(rec.Reading));
+    DescLabel->setText(rec.Description);
+    ValueDateLabel->setText(rec.DateTimeCreation.toString());
+
     /////////////////////////////////////////////// DEBUGGING AREA /////////////////////////////////////////////
-    for (QObject* child : Children) {
-        qDebug() << child->objectName() << "\n";
-        for (QObject* subchild : child->children()) {
-            qDebug() << "\t" <<  subchild->objectName() << "\n";
-            for (QObject* subsubchild : subchild->children()) {
-                qDebug() << "\t\t" << subsubchild->objectName() << "\n";
+    {
+        for (QObject* child : Children) {
+            qDebug() << child->objectName() << "\n";
+            for (QObject* subchild : child->children()) {
+                qDebug() << "\t" <<  subchild->objectName() << "\n";
+                for (QObject* subsubchild : subchild->children()) {
+                    qDebug() << "\t\t" << subsubchild->objectName() << "\n";
+                }
             }
         }
+
+        qDebug() << ValueLabel->objectName();
+        qDebug() << ValueDateLabel->objectName();
+        qDebug() << DescLabel->objectName();
+
     }
 
     /* Name Tree:
@@ -97,11 +112,6 @@ void MainWindow::on_EditButton_clicked() {
              ""
     */
     /////////////////////////////////////////// END DEBUGGING AREA //////////////////////////////////////////////
-
-    QLabel* ValueLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(1));
-    QLabel* DescLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(2));
-    QLabel* ValueDateLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(3));
-
 }
 
 

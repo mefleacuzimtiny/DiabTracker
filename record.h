@@ -101,7 +101,10 @@ struct Record {
 
             //TODO: Get the values from the editDialog window (by declaring and implementing it's getters) and store them into the attributes of this struct
             // And then in the edit button slot (the function that calls this one), find a way to refresh that particular frame so the new values show.
-
+            Reading = editRecord.getValue().toInt();
+            RecentEatingTime = editRecord.getRecentMealTime();
+            Description = editRecord.getDesc();
+            DateTimeCreation = editRecord.getCreationDateTime();
         }
     }
 
