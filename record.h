@@ -110,13 +110,13 @@ struct Record {
         QVBoxLayout* History = window->getHistoryLayout();
 
         QFrame* RecordFrame = new QFrame();
-        QHBoxLayout* newRecord = new QHBoxLayout(RecordFrame);
+            QHBoxLayout* newRecord = new QHBoxLayout(RecordFrame); newRecord->setObjectName(newRecord);
 
             QFrame* DetailsFrame = new QFrame();
-            QHBoxLayout* recordDetails = new QHBoxLayout(DetailsFrame);
+                QHBoxLayout* recordDetails = new QHBoxLayout(DetailsFrame);
 
                 QFrame* LabelsFrame = new QFrame();
-                QVBoxLayout* detailLabels = new QVBoxLayout(LabelsFrame);
+                    QVBoxLayout* detailLabels = new QVBoxLayout(LabelsFrame);
 
                         QLabel* ValueLabel = new QLabel();
                         QLabel* DescLabel = new QLabel();
@@ -126,29 +126,29 @@ struct Record {
                         DescLabel->setText(Description);
                         ValueDateLabel->setText(DateTimeCreation.toString());
 
-                detailLabels->addWidget(ValueLabel);
-                detailLabels->addWidget(DescLabel);
-                detailLabels->addWidget(ValueDateLabel);
+                    detailLabels->addWidget(ValueLabel);
+                    detailLabels->addWidget(DescLabel);
+                    detailLabels->addWidget(ValueDateLabel);
 
-                QSpacerItem* spacer = new QSpacerItem(50, 50, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+                    QSpacerItem* spacer = new QSpacerItem(50, 50, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-            recordDetails->insertWidget(0, LabelsFrame);
-            recordDetails->insertSpacerItem(1, spacer);
+                recordDetails->insertWidget(0, LabelsFrame);
+                recordDetails->insertSpacerItem(1, spacer);
 
             QFrame* OptionsFrame = new QFrame();
-            QHBoxLayout* recordOptions = new QHBoxLayout(OptionsFrame);
+                QHBoxLayout* recordOptions = new QHBoxLayout(OptionsFrame);
 
-                QPushButton* btnDelete = new QPushButton("delete");
-                QPushButton* btnEdit = new QPushButton("Edit");
+                    QPushButton* btnDelete = new QPushButton("delete");
+                    QPushButton* btnEdit = new QPushButton("Edit");
 
-                QObject::connect(btnDelete, SIGNAL(clicked()), window, SLOT(on_DeleteButton_clicked()));
-                QObject::connect(btnEdit, SIGNAL(clicked()), window, SLOT(on_EditButton_clicked()));
+                    QObject::connect(btnDelete, SIGNAL(clicked()), window, SLOT(on_DeleteButton_clicked()));
+                    QObject::connect(btnEdit, SIGNAL(clicked()), window, SLOT(on_EditButton_clicked()));
 
-            recordOptions->insertWidget(0, btnDelete);
-            recordOptions->insertWidget(1, btnEdit);
+                recordOptions->insertWidget(0, btnDelete);
+                recordOptions->insertWidget(1, btnEdit);
 
-        newRecord->addWidget(DetailsFrame);
-        newRecord->addWidget(OptionsFrame);
+            newRecord->addWidget(DetailsFrame);
+            newRecord->addWidget(OptionsFrame);
 
         // History->insertWidget(History->count()-1, RecordFrame);
         History->insertWidget(0, RecordFrame);

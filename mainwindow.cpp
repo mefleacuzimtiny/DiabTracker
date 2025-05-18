@@ -59,9 +59,17 @@ void MainWindow::on_EditButton_clicked() {
     // TODO: write code to update the labels inside the recordContainer to be the same as the attributes of rec
 
     QObjectList Children = recordContainer->children();
+    /////////////////////////////////////////////// DEBUGGING AREA /////////////////////////////////////////////
     for (QObject* child : Children) {
         qDebug() << child->objectName() << "\n";
+        for (QObject* subchild : child->children()) {
+            qDebug() << subchild->objectName() << "\n";
+            for (QObject* subsubchild : child->children()) {
+                qDebug() << subsubchild->objectName() << "\n";
+            }
+        }
     }
+    /////////////////////////////////////////// END DEBUGGING AREA //////////////////////////////////////////////
 }
 
 
