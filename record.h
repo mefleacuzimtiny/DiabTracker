@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QSpacerItem>
 #include <QHBoxLayout>
+#include <QMessageBox>
 
 #include "mainwindow.h"
 #include "editrecorddialog.h"
@@ -77,8 +78,9 @@ struct Record {
 
         if (dialogIsAccepted) {
             Reading = recordInputs.getValue().toInt();
-            if (Reading == 0) {
+            if (Reading <= 0) {
                 // popup error dialogue
+                QMessageBox::critical(window, "Error", "Cannot have an empty reading!");
                 qDebug() << "Cannot have an empty Reading" << "\n";
                 return;
             }
@@ -98,10 +100,18 @@ struct Record {
 
         if (dialogIsAccepted) {
             qDebug() << "RECORD BEING EDITED" << '\n';
-
             //TODO: Get the values from the editDialog window (by declaring and implementing it's getters) and store them into the attributes of this struct
             // And then in the edit button slot (the function that calls this one), find a way to refresh that particular frame so the new values show.
+
             Reading = editRecord.getValue().toInt();
+
+            if (Reading <= 0) {
+                // popup error dialogue
+                QMessageBox::critical(window, "Error", "Cannot have an empty reading!");
+                qDebug() << "Cannot have an empty Reading" << "\n";
+                return;
+            }
+
             RecentEatingTime = editRecord.getRecentMealTime();
             Description = editRecord.getDesc();
             DateTimeCreation = editRecord.getCreationDateTime();
@@ -157,5 +167,7 @@ struct Record {
         History->insertWidget(0, RecordFrame);
     }
 };
+
+QVector<Record> Records;
 
 #endif // RECORD_H
