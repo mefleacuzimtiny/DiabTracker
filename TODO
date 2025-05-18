@@ -1,0 +1,22 @@
+Todo:
+1. Design UI
+    o Add new record (foating "+" button throughout the entire UI, appends record to csv file) (Create)
+    o View history
+        1. Read history from CSV file into vector of Records (Read)
+        2. Delete history record Record.delete (Delete)
+        3. Edit history record (Update)
+    o Show stats charts
+    o Exit
+2. Design the record fields and methods:
+    o TimeSinceFood
+    o Description
+    o Time (current time if not provided)
+    o Date (current date if not provided)
+    o Record.repr() returns a line containing: TimeSinceFood, description, Time, Date
+3. Design the Record Display Box:
+    o Contains the index of the record in the vector
+    o Contains an structure with sub-structures
+    o Contains a sub-structure DeleteButton
+    o Contains a sub-structure EditButton
+4. Design the statistical analysis features (i.e regression analysis)
+    o Show if the current diabetes value is bad or good by determining how far out of the normal range it is
