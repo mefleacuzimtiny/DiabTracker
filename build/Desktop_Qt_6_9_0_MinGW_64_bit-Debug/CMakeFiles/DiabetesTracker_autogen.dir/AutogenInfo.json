@@ -354,6 +354,12 @@
 			"MU",
 			"EWIEGA46WW/moc_recorddialog.cpp",
 			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.h",
+			"MU",
+			"EWIEGA46WW/moc_recorddisplayframe.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -444,6 +450,11 @@
 		],
 		[
 			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/recorddialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.cpp",
 			"MU",
 			null
 		]

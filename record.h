@@ -12,6 +12,7 @@
 
 #include "mainwindow.h"
 #include "editrecorddialog.h"
+#include "recorddisplayframe.h"
 
 /* TODO:
  * Design the record fields and methods:
@@ -51,6 +52,7 @@ struct Record {
     QTime RecentEatingTime = QTime(6,30,0);
     QString Description = "No Description";
     QDateTime DateTimeCreation = QDateTime(QDate(2022, 5, 18), QTime(4, 15, 0));
+    QFrame* DisplayFrame;
 
     Record(int reading, QTime recent_meal_time, QString desc, QDate date = QDate::currentDate(), QTime time = QTime::currentTime()) {
         Reading = reading;
@@ -115,15 +117,22 @@ struct Record {
             RecentEatingTime = editRecord.getRecentMealTime();
             Description = editRecord.getDesc();
             DateTimeCreation = editRecord.getCreationDateTime();
+
+            QObjectList Children = recordContainer->children();
+
+            QLabel* ValueLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(1));
+            QLabel* DescLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(2));
+            QLabel* ValueDateLabel = qobject_cast<QLabel*>(Children.at(1)->children().at(1)->children().at(3));
         }
     }
 
     void addToDisplay(MainWindow* window) {
+        /*
         // QVBoxLayout* History = qobject_cast<QVBoxLayout*>(window.ui->HistoryContents->layout());
         QVBoxLayout* History = window->getHistoryLayout();
 
-        QFrame* RecordFrame = new QFrame();
-            QHBoxLayout* newRecord = new QHBoxLayout(RecordFrame); newRecord->setObjectName("newRecord");
+        DisplayFrame = new QFrame();
+            QHBoxLayout* newRecord = new QHBoxLayout(DisplayFrame); newRecord->setObjectName("newRecord");
 
             QFrame* DetailsFrame = new QFrame(); DetailsFrame->setObjectName("DetailsFrame");
                 QHBoxLayout* recordDetails = new QHBoxLayout(DetailsFrame); recordDetails->setObjectName("recordDetails");
@@ -164,7 +173,8 @@ struct Record {
             newRecord->addWidget(OptionsFrame);
 
         // History->insertWidget(History->count()-1, RecordFrame);
-        History->insertWidget(0, RecordFrame);
+        */
+        History->insertWidget(0, DisplayFrame);
     }
 };
 
