@@ -2,3 +2,4 @@
 #include "EWIEGA46WW/moc_editrecorddialog.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_recorddialog.cpp"
+#include "EWIEGA46WW/moc_recorddisplayframe.cpp"

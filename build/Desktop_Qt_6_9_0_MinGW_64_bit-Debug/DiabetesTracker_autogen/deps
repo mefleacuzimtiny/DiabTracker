@@ -1,4 +1,5 @@
 DiabetesTracker_autogen/timestamp: \
+	C:/Qt/6.9.0/mingw_64/include/QtCore/QDateTime \
 	C:/Qt/6.9.0/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.9.0/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.9.0/mingw_64/include/QtCore/q20iterator.h \
@@ -160,6 +161,7 @@ DiabetesTracker_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QTimeEdit \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QVBoxLayout \
+	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qboxlayout.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdatetimeedit.h \
@@ -603,7 +605,10 @@ DiabetesTracker_autogen/timestamp: \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/record.h \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddialog.cpp \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddialog.h \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.cpp \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.h \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/editrecorddialog.ui \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/mainwindow.ui \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddialog.ui \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
