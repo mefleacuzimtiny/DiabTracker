@@ -66,6 +66,13 @@ void MainWindow::on_actionOpen_History_triggered() {
         If there's a remaining field and field index is 3:
             Save it and push record to vector
      */
+
+    dumpRecords();
+}
+
+void MainWindow::on_actionSave_Data_triggered()
+{
+    writeRecordsToFile();
 }
 
 void MainWindow::on_AddButton_clicked() {
@@ -93,7 +100,7 @@ void MainWindow::on_AddButton_clicked() {
         recdisp->updateValues();
         History->insertWidget(0, recdisp);
 
-        HistoryData.push_back(recdisp);
+        addRecord(recdisp);
 
         std::fstream fout("RecordHistory.txt", std::ios::app);
         if (fout) {
@@ -102,3 +109,5 @@ void MainWindow::on_AddButton_clicked() {
         }
     }
 }
+
+

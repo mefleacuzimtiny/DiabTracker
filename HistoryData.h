@@ -6,21 +6,17 @@
 #include "recorddisplayframe.h"
 
 // declare a container for HistoryData (which is shared in mainwindow.cpp and recorddisplayframe.cpp as the buttons for the record CRUD
-// are defined in those files). I'm using a vector (instead of a list or deque), because my main priority in this program is deletion, potential insertion,
+// are defined in those files). I'm using a list (instead of a vector or deque), because my main priority in this program is deletion, potential insertion,
 // linear file storage, and range selection for looping and statistics. Hence, random access is not a priority for me.
-// Both deletion and insertion would be similarly complex in both vectors and queues because for deletion, shifting is necessary, and for lists,
-// traversal is necessary.
+// Both deletion and insertion would be complex in vectors because shifting is necessary, whereas with lists, only traversal is necessary
+// However, since I've made wrapper functions to interact with HistoryData, if I wanted to use a different container, I could, and all I would have to do
+// is edit the function deleteRecord()
 
-std::list <RecordDisplayFrame*> HistoryData;
+extern std::vector <RecordDisplayFrame*> HistoryData; // extern means it's defined elsewhere
 
-void deleteRecord(RecordDisplayFrame* recdisp) {
-
-}
-
-void dumpRecords() {
-    for (RecordDisplayFrame* recdisp : HistoryData) {
-        qDebug() << recdisp->repr();
-    }
-}
+void deleteRecord(RecordDisplayFrame* recdisp);
+void addRecord(RecordDisplayFrame* recdisp);
+void dumpRecords();
+void writeRecordsToFile();
 
 #endif // HISTORYDATA_H

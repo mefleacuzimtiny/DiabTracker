@@ -29,6 +29,7 @@ class Ui_MainWindow
 public:
     QAction *actionHistory;
     QAction *actionOpen_History;
+    QAction *actionSave_Data;
     QWidget *centralwidget;
     QTabWidget *tabWidget;
     QWidget *History;
@@ -52,6 +53,8 @@ public:
         actionHistory->setObjectName("actionHistory");
         actionOpen_History = new QAction(MainWindow);
         actionOpen_History->setObjectName("actionOpen_History");
+        actionSave_Data = new QAction(MainWindow);
+        actionSave_Data->setObjectName("actionSave_Data");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         tabWidget = new QTabWidget(centralwidget);
@@ -97,6 +100,7 @@ public:
 
         menubar->addAction(menuFile->menuAction());
         menuFile->addAction(actionOpen_History);
+        menuFile->addAction(actionSave_Data);
 
         retranslateUi(MainWindow);
 
@@ -111,6 +115,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionHistory->setText(QCoreApplication::translate("MainWindow", "History", nullptr));
         actionOpen_History->setText(QCoreApplication::translate("MainWindow", "Open History", nullptr));
+        actionSave_Data->setText(QCoreApplication::translate("MainWindow", "Save Data", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(History), QCoreApplication::translate("MainWindow", "History", nullptr));
         StatsButton->setText(QCoreApplication::translate("MainWindow", "Generate Statistics", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Statistics), QCoreApplication::translate("MainWindow", "Statistics", nullptr));

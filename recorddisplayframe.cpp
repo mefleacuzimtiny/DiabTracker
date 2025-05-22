@@ -81,7 +81,6 @@ void RecordDisplayFrame::setDescription(QString desc)
 void RecordDisplayFrame::setTimeSinceMeal(QDateTime datetime)
 {
     ui->LabelTimeSinceMealDisplay->setText(getTimeSinceMeal());
-    // ui->LabelTimeSinceMealDisplay->setText(datetime.toString(GLOBAL_DATE_TIME_FORMAT));
 }
 
 void RecordDisplayFrame::updateValues()
@@ -132,6 +131,7 @@ void RecordDisplayFrame::on_ButtonEdit_clicked()
 void RecordDisplayFrame::on_ButtonDelete_clicked()
 {
     // delete from HistoryData
+    deleteRecord(this);
     this->deleteLater();
 }
 
