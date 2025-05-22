@@ -12,13 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QDateTimeEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QTextEdit>
-#include <QtWidgets/QTimeEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,10 +29,10 @@ public:
     QLabel *LabelVal;
     QLineEdit *LineEditValue;
     QLabel *LabelTime;
-    QTimeEdit *LineEditEatingTime;
     QLabel *LabelDesc;
     QTextEdit *TextEditDesc;
     QDialogButtonBox *buttonBox;
+    QDateTimeEdit *DateTimeEditLastMeal;
 
     void setupUi(QDialog *RecordDialog)
     {
@@ -56,11 +56,6 @@ public:
 
         formLayout->setWidget(1, QFormLayout::ItemRole::LabelRole, LabelTime);
 
-        LineEditEatingTime = new QTimeEdit(RecordDialog);
-        LineEditEatingTime->setObjectName("LineEditEatingTime");
-
-        formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, LineEditEatingTime);
-
         LabelDesc = new QLabel(RecordDialog);
         LabelDesc->setObjectName("LabelDesc");
 
@@ -78,6 +73,11 @@ public:
 
         formLayout->setWidget(3, QFormLayout::ItemRole::SpanningRole, buttonBox);
 
+        DateTimeEditLastMeal = new QDateTimeEdit(RecordDialog);
+        DateTimeEditLastMeal->setObjectName("DateTimeEditLastMeal");
+
+        formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, DateTimeEditLastMeal);
+
 
         retranslateUi(RecordDialog);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, RecordDialog, qOverload<>(&QDialog::accept));
@@ -90,8 +90,7 @@ public:
     {
         RecordDialog->setWindowTitle(QCoreApplication::translate("RecordDialog", "Dialog", nullptr));
         LabelVal->setText(QCoreApplication::translate("RecordDialog", "Value", nullptr));
-        LabelTime->setText(QCoreApplication::translate("RecordDialog", "Last Meal time", nullptr));
-        LineEditEatingTime->setSpecialValueText(QString());
+        LabelTime->setText(QCoreApplication::translate("RecordDialog", "Last Meal", nullptr));
         LabelDesc->setText(QCoreApplication::translate("RecordDialog", "Description", nullptr));
     } // retranslateUi
 

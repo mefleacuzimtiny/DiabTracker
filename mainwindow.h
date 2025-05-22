@@ -27,8 +27,6 @@ public:
 private slots:
     void on_actionOpen_History_triggered();
 
-    void on_DeleteButton_clicked();
-    void on_EditButton_clicked();
     void on_AddButton_clicked();
 
 private:

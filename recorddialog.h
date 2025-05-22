@@ -18,11 +18,11 @@ public:
 
     QString getValue() const;
 
-    QTime getTime() const;
+    QDateTime getDateTime() const;
 
     QString getDescription() const; // const protects the function from modifying members
 
-    void setTimeEdit(QTime);
+    void setDateTimeEdit(QDateTime);
 
 private:
     Ui::RecordDialog *ui;

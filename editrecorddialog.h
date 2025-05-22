@@ -15,13 +15,12 @@ public:
     explicit EditRecordDialog(QWidget *parent = nullptr);
     ~EditRecordDialog();
 
-    QDateTime getCreationDateTime();
-    QTime getRecentMealTime();
+    QDateTime getRecentMealTime();
     QString getValue();
     QString getDesc();
 
     void setCreationDateTime(QDateTime);
-    void setRecentMealTime(QTime);
+    void setRecentMealDateTime(QDateTime);
     void setValue(QString);
     void setDescription(QString);
 

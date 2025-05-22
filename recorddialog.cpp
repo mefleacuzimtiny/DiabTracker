@@ -17,14 +17,14 @@ QString RecordDialog::getValue() const {
     return ui->LineEditValue->text();
 }
 
-QTime RecordDialog::getTime() const {
-    return ui->LineEditEatingTime->time();
+QDateTime RecordDialog::getDateTime() const {
+    return ui->DateTimeEditLastMeal->dateTime();
 }
 
 QString RecordDialog::getDescription() const {
     return ui->TextEditDesc->toPlainText();
 }
 
-void RecordDialog::setTimeEdit(QTime time) {
-    return ui->LineEditEatingTime->setTime(time);
+void RecordDialog::setDateTimeEdit(QDateTime datetime) {
+    return ui->DateTimeEditLastMeal->setDateTime(datetime);
 }

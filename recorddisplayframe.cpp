@@ -3,6 +3,9 @@
 #include "editrecorddialog.h"
 
 #include <QMessageBox>
+#include <string>
+
+const QString GLOBAL_DATE_TIME_FORMAT = "hh:mm AP, ddd, dd MMMM yyyy";
 
 RecordDisplayFrame::RecordDisplayFrame(QWidget *parent)
     : QWidget(parent)
@@ -26,31 +29,45 @@ void RecordDisplayFrame::setDescription(QString desc)
     ui->LabelDescriptionDisplay->setText(desc);
 }
 
-void RecordDisplayFrame::setRecentMealTime(QTime time, QDate date)
+void RecordDisplayFrame::setTimeSinceMeal(QDateTime datetime)
 {
-    ui->LabelRecentMealTimeDisplay->setText(date.toString() + ", " + time.toString());
+    ui->LabelTimeSinceMealDisplay->setText(datetime.toString(GLOBAL_DATE_TIME_FORMAT));
 }
 
 void RecordDisplayFrame::updateValues()
 {
     setValue(Reading);
-    setRecentMealTime(RecentMealTime);
+    setTimeSinceMeal(RecentMealDateTime);
     setDescription(Description);
+}
+
+std::string RecordDisplayFrame::repr()
+{
+    return std::to_string(Reading) + ","
+            + '"' + Description.toStdString() + '"' + ","
+            + RecentMealDateTime.toString().toStdString() + ","
+            + DateTimeCreation.toString().toStdString();
+}
+
+QString RecordDisplayFrame::getTimeSinceMeal()
+{
+    // datetimecreation - recentmealtime
 }
 
 void RecordDisplayFrame::on_ButtonEdit_clicked()
 {
-    EditRecordDialog editRecord(this);
-    editRecord.setCreationDateTime(DateTimeCreation);
-    editRecord.setRecentMealTime(RecentMealTime);
-    editRecord.setDescription(Description);
-    editRecord.setValue(QString::number(Reading));
+    EditRecordDialog recordEditDialogue(this);
 
-    bool dialogIsAccepted = editRecord.exec() == QDialog::Accepted;
+    recordEditDialogue.setValue(QString::number(Reading));
+    recordEditDialogue.setDescription(Description);
+    recordEditDialogue.setRecentMealDateTime(RecentMealDateTime);
+    recordEditDialogue.setCreationDateTime(DateTimeCreation);
+
+    bool dialogIsAccepted = recordEditDialogue.exec() == QDialog::Accepted;
     if (dialogIsAccepted) {
         qDebug() << "RECORD BEING EDITED" << '\n';
 
-        Reading = editRecord.getValue().toInt();
+        Reading = recordEditDialogue.getValue().toInt();
 
         if (Reading <= 0) {
             QMessageBox::critical(this, "Error", "Cannot have an empty reading!");
@@ -58,11 +75,18 @@ void RecordDisplayFrame::on_ButtonEdit_clicked()
             return;
         }
 
-        Reading = editRecord.getValue().toInt();
-        RecentMealTime = editRecord.getRecentMealTime();
-        Description = editRecord.getDesc();
-        DateTimeCreation = editRecord.getCreationDateTime();
+        Reading = recordEditDialogue.getValue().toInt();
+        RecentMealDateTime = recordEditDialogue.getRecentMealTime();
+        Description = recordEditDialogue.getDesc();
 
         updateValues();
     }
+    recordEditDialogue.deleteLater();
 }
+
+void RecordDisplayFrame::on_ButtonDelete_clicked()
+{
+    // remove from history vector
+    this->deleteLater();
+}
+

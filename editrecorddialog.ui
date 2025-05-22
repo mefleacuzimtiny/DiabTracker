@@ -17,12 +17,9 @@
    <item row="0" column="0">
     <widget class="QLabel" name="LabelDateTimeCreated">
      <property name="text">
-      <string>Date and Time Created</string>
+      <string>Created on</string>
      </property>
     </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QDateTimeEdit" name="DateTimeEditCreation"/>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="LabelRecentMealTime">
@@ -30,9 +27,6 @@
       <string>Recent Meal Time</string>
      </property>
     </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QTimeEdit" name="TimeEditRecentMeal"/>
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="LabelValue">
@@ -61,6 +55,16 @@
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QDateTimeEdit" name="DateTimeEditRecentMeal"/>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="LabelDateTimeCreatedDisplay">
+     <property name="text">
+      <string>LabelDateTimeCreation</string>
      </property>
     </widget>
    </item>

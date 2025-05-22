@@ -19,7 +19,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QTextEdit>
-#include <QtWidgets/QTimeEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,14 +27,14 @@ class Ui_EditRecordDialog
 public:
     QFormLayout *formLayout;
     QLabel *LabelDateTimeCreated;
-    QDateTimeEdit *DateTimeEditCreation;
     QLabel *LabelRecentMealTime;
-    QTimeEdit *TimeEditRecentMeal;
     QLabel *LabelValue;
     QLineEdit *LineEditValue;
     QLabel *LabelDescription;
     QTextEdit *TextEditDescription;
     QDialogButtonBox *buttonBox;
+    QDateTimeEdit *DateTimeEditRecentMeal;
+    QLabel *LabelDateTimeCreatedDisplay;
 
     void setupUi(QDialog *EditRecordDialog)
     {
@@ -49,20 +48,10 @@ public:
 
         formLayout->setWidget(0, QFormLayout::ItemRole::LabelRole, LabelDateTimeCreated);
 
-        DateTimeEditCreation = new QDateTimeEdit(EditRecordDialog);
-        DateTimeEditCreation->setObjectName("DateTimeEditCreation");
-
-        formLayout->setWidget(0, QFormLayout::ItemRole::FieldRole, DateTimeEditCreation);
-
         LabelRecentMealTime = new QLabel(EditRecordDialog);
         LabelRecentMealTime->setObjectName("LabelRecentMealTime");
 
         formLayout->setWidget(1, QFormLayout::ItemRole::LabelRole, LabelRecentMealTime);
-
-        TimeEditRecentMeal = new QTimeEdit(EditRecordDialog);
-        TimeEditRecentMeal->setObjectName("TimeEditRecentMeal");
-
-        formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, TimeEditRecentMeal);
 
         LabelValue = new QLabel(EditRecordDialog);
         LabelValue->setObjectName("LabelValue");
@@ -91,6 +80,16 @@ public:
 
         formLayout->setWidget(4, QFormLayout::ItemRole::SpanningRole, buttonBox);
 
+        DateTimeEditRecentMeal = new QDateTimeEdit(EditRecordDialog);
+        DateTimeEditRecentMeal->setObjectName("DateTimeEditRecentMeal");
+
+        formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, DateTimeEditRecentMeal);
+
+        LabelDateTimeCreatedDisplay = new QLabel(EditRecordDialog);
+        LabelDateTimeCreatedDisplay->setObjectName("LabelDateTimeCreatedDisplay");
+
+        formLayout->setWidget(0, QFormLayout::ItemRole::FieldRole, LabelDateTimeCreatedDisplay);
+
 
         retranslateUi(EditRecordDialog);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, EditRecordDialog, qOverload<>(&QDialog::accept));
@@ -102,10 +101,11 @@ public:
     void retranslateUi(QDialog *EditRecordDialog)
     {
         EditRecordDialog->setWindowTitle(QCoreApplication::translate("EditRecordDialog", "Dialog", nullptr));
-        LabelDateTimeCreated->setText(QCoreApplication::translate("EditRecordDialog", "Date and Time Created", nullptr));
+        LabelDateTimeCreated->setText(QCoreApplication::translate("EditRecordDialog", "Created on", nullptr));
         LabelRecentMealTime->setText(QCoreApplication::translate("EditRecordDialog", "Recent Meal Time", nullptr));
         LabelValue->setText(QCoreApplication::translate("EditRecordDialog", "Value", nullptr));
         LabelDescription->setText(QCoreApplication::translate("EditRecordDialog", "Description", nullptr));
+        LabelDateTimeCreatedDisplay->setText(QCoreApplication::translate("EditRecordDialog", "LabelDateTimeCreation", nullptr));
     } // retranslateUi
 
 };

@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-5b5e82a6a5f768fd5e66.json",
+					"jsonFile" : "directory-.-Debug-b6d4dc92fad7e0a4f222.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "DiabetesTracker::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DiabetesTracker-Debug-c717b90050ddc1920597.json",
+					"jsonFile" : "target-DiabetesTracker-Debug-dad0f4135b202c8290c6.json",
 					"name" : "DiabetesTracker",
 					"projectIndex" : 0
 				},

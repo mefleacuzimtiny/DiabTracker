@@ -28,10 +28,10 @@ public:
     QGridLayout *gridLayout;
     QLabel *LabelDescription;
     QLabel *LabelValue;
-    QLabel *LabelRecentMealTime;
+    QLabel *LabelTimeSinceMeal;
     QLabel *LabelValueDisplay;
     QLabel *LabelDescriptionDisplay;
-    QLabel *LabelRecentMealTimeDisplay;
+    QLabel *LabelTimeSinceMealDisplay;
     QPushButton *ButtonEdit;
     QPushButton *ButtonDelete;
 
@@ -58,11 +58,11 @@ public:
 
         gridLayout->addWidget(LabelValue, 0, 0, 1, 1);
 
-        LabelRecentMealTime = new QLabel(RecordDisplayFrame);
-        LabelRecentMealTime->setObjectName("LabelRecentMealTime");
-        LabelRecentMealTime->setMaximumSize(QSize(120, 16777215));
+        LabelTimeSinceMeal = new QLabel(RecordDisplayFrame);
+        LabelTimeSinceMeal->setObjectName("LabelTimeSinceMeal");
+        LabelTimeSinceMeal->setMaximumSize(QSize(120, 16777215));
 
-        gridLayout->addWidget(LabelRecentMealTime, 2, 0, 1, 1);
+        gridLayout->addWidget(LabelTimeSinceMeal, 2, 0, 1, 1);
 
         LabelValueDisplay = new QLabel(RecordDisplayFrame);
         LabelValueDisplay->setObjectName("LabelValueDisplay");
@@ -74,10 +74,10 @@ public:
 
         gridLayout->addWidget(LabelDescriptionDisplay, 1, 1, 1, 1);
 
-        LabelRecentMealTimeDisplay = new QLabel(RecordDisplayFrame);
-        LabelRecentMealTimeDisplay->setObjectName("LabelRecentMealTimeDisplay");
+        LabelTimeSinceMealDisplay = new QLabel(RecordDisplayFrame);
+        LabelTimeSinceMealDisplay->setObjectName("LabelTimeSinceMealDisplay");
 
-        gridLayout->addWidget(LabelRecentMealTimeDisplay, 2, 1, 1, 1);
+        gridLayout->addWidget(LabelTimeSinceMealDisplay, 2, 1, 1, 1);
 
 
         horizontalLayout->addLayout(gridLayout);
@@ -108,10 +108,10 @@ public:
         RecordDisplayFrame->setWindowTitle(QCoreApplication::translate("RecordDisplayFrame", "Form", nullptr));
         LabelDescription->setText(QCoreApplication::translate("RecordDisplayFrame", "Description", nullptr));
         LabelValue->setText(QCoreApplication::translate("RecordDisplayFrame", "Value:", nullptr));
-        LabelRecentMealTime->setText(QCoreApplication::translate("RecordDisplayFrame", "Recent Meal Time", nullptr));
+        LabelTimeSinceMeal->setText(QCoreApplication::translate("RecordDisplayFrame", "Time Since Meal", nullptr));
         LabelValueDisplay->setText(QCoreApplication::translate("RecordDisplayFrame", "TextLabel", nullptr));
         LabelDescriptionDisplay->setText(QCoreApplication::translate("RecordDisplayFrame", "TextLabel", nullptr));
-        LabelRecentMealTimeDisplay->setText(QCoreApplication::translate("RecordDisplayFrame", "TextLabel", nullptr));
+        LabelTimeSinceMealDisplay->setText(QCoreApplication::translate("RecordDisplayFrame", "TextLabel", nullptr));
         ButtonEdit->setText(QCoreApplication::translate("RecordDisplayFrame", "Edit", nullptr));
         ButtonDelete->setText(QCoreApplication::translate("RecordDisplayFrame", "Delete", nullptr));
     } // retranslateUi

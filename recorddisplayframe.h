@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QDateTime>
+#include <string>
 
 namespace Ui {
 class RecordDisplayFrame;
@@ -18,16 +19,21 @@ public:
 
     void setValue(int reading);
     void setDescription(QString desc);
-    void setRecentMealTime(QTime time, QDate date = QDate::currentDate());
+    void setTimeSinceMeal(QDateTime datetime);
     void updateValues();
 
+    std::string repr(); // returns a string to be stoored inside of a text file, with values separated by commas
+    QString getTimeSinceMeal(); // returns difference between RecentMealTime and DateTimeCreation
+
     int Reading = 1;
-    QTime RecentMealTime = QTime(6,30,0);
     QString Description = "No Description";
-    QDateTime DateTimeCreation = QDateTime::currentDateTime();
+    QDateTime RecentMealDateTime = QDateTime(QDate::currentDate(), QTime(6,30,0));
+    QDateTime DateTimeCreation;
 
 private slots:
     void on_ButtonEdit_clicked();
+
+    void on_ButtonDelete_clicked();
 
 private:
     Ui::RecordDisplayFrame *ui;

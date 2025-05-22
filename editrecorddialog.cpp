@@ -11,11 +11,8 @@ EditRecordDialog::~EditRecordDialog() {
     delete ui;
 }
 
-QDateTime EditRecordDialog::getCreationDateTime() {
-    return ui->DateTimeEditCreation->dateTime();
-}
-QTime EditRecordDialog::getRecentMealTime() {
-    return ui->TimeEditRecentMeal->time();
+QDateTime EditRecordDialog::getRecentMealTime() {
+    return ui->DateTimeEditRecentMeal->dateTime();
 }
 QString EditRecordDialog::getValue() {
     return ui->LineEditValue->text();
@@ -25,10 +22,10 @@ QString EditRecordDialog::getDesc() {
 }
 
 void EditRecordDialog::setCreationDateTime(QDateTime datetime) {
-    ui->DateTimeEditCreation->setDateTime(datetime);
+    ui->LabelDateTimeCreatedDisplay->setText(datetime.toString());
 }
-void EditRecordDialog::setRecentMealTime(QTime time) {
-    ui->TimeEditRecentMeal->setTime(time);
+void EditRecordDialog::setRecentMealDateTime(QDateTime datetime) {
+    ui->DateTimeEditRecentMeal->setDateTime(datetime);
 }
 
 void EditRecordDialog::setValue(QString value) {
