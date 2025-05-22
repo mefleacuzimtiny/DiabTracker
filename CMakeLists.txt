@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         recorddialog.h recorddialog.cpp recorddialog.ui
         editrecorddialog.h editrecorddialog.cpp editrecorddialog.ui
         recorddisplayframe.h recorddisplayframe.cpp recorddisplayframe.ui
+        HistoryData.h
 
     )
 # Define target properties for Android with Qt 6 as:

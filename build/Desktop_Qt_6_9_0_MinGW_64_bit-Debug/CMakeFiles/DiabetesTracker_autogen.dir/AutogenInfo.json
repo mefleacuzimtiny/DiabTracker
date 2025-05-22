@@ -332,6 +332,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/HistoryData.h",
+			"MU",
+			"EWIEGA46WW/moc_HistoryData.cpp",
+			null
+		],
+		[
 			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/editrecorddialog.h",
 			"MU",
 			"EWIEGA46WW/moc_editrecorddialog.cpp",

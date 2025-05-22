@@ -22,8 +22,8 @@ public:
     void setTimeSinceMeal(QDateTime datetime);
     void updateValues();
 
-    std::string repr(); // returns a string to be stoored inside of a text file, with values separated by commas
-    QString getTimeSinceMeal(); // returns difference between RecentMealTime and DateTimeCreation
+    std::string repr(); // returns a string to be stored inside of a text file, with values separated by commas
+    QString getTimeSinceMeal(); // returns difference between RecentMealDateTime and DateTimeCreation
 
     int Reading = 1;
     QString Description = "No Description";

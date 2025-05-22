@@ -3,6 +3,7 @@
 #include "recorddialog.h"
 #include "editrecorddialog.h"
 #include "recorddisplayframe.h"
+#include "HistoryData.h"
 
 #include <QLabel>
 #include <QDateTime>
@@ -27,6 +28,8 @@ QVBoxLayout* MainWindow::getHistoryLayout() {
 
 void MainWindow::on_actionOpen_History_triggered() {
     // add popup asking for directory to text file containing records
+    // parse inputed text file based on directory and store data
+    // for each item in the data, generate a RecordDisplayFrame widget and store its pointer in HistoryData
 
     /*
     Open file
