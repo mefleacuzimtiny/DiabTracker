@@ -93,7 +93,7 @@ void MainWindow::on_AddButton_clicked() {
         recdisp->updateValues();
         History->insertWidget(0, recdisp);
 
-        // HistoryData.push_back(recdisp);
+        HistoryData.push_back(recdisp);
 
         std::fstream fout("RecordHistory.txt", std::ios::app);
         if (fout) {
