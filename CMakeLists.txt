@@ -28,8 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         recorddialog.h recorddialog.cpp recorddialog.ui
         editrecorddialog.h editrecorddialog.cpp editrecorddialog.ui
         recorddisplayframe.h recorddisplayframe.cpp recorddisplayframe.ui
-        HistoryData.h
-        HistoryData.cpp
+        HistoryData.h HistoryData.cpp
 
 
     )

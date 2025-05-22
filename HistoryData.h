@@ -2,6 +2,10 @@
 #define HISTORYDATA_H
 
 #include <list>
+#include <fstream>
+#include <vector>
+#include <array>
+#include <string>
 
 #include "recorddisplayframe.h"
 
@@ -18,5 +22,7 @@ void deleteRecord(RecordDisplayFrame* recdisp);
 void addRecord(RecordDisplayFrame* recdisp);
 void dumpRecords();
 void writeRecordsToFile();
+void displayRecords();
+std::vector <std::array <std::string, 4>> parseCSV(std::ifstream& fout);
 
 #endif // HISTORYDATA_H
