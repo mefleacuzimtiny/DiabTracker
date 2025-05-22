@@ -20,7 +20,7 @@ public:
 
     QDateTime getDateTime() const;
 
-    QString getDescription() const; // const protects the function from modifying members
+    QString getDescription() const; // const protects the function from modifying members of the function's parent
 
     void setDateTimeEdit(QDateTime);
 

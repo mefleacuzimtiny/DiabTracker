@@ -86,6 +86,7 @@ void MainWindow::on_AddButton_clicked() {
         recdisp->RecentMealDateTime = recordInputs.getDateTime();
         recdisp->Description = recordInputs.getDescription();
         recdisp->DateTimeCreation = QDateTime::currentDateTime();
+
         recdisp->updateValues();
         History->insertWidget(0, recdisp);
 

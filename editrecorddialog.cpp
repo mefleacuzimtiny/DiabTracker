@@ -1,5 +1,6 @@
 #include "editrecorddialog.h"
 #include "ui_editrecorddialog.h"
+const QString GLOBAL_DATE_TIME_FORMAT = "hh:mm AP, ddd, dd MMMM yyyy";
 
 EditRecordDialog::EditRecordDialog(QWidget *parent)
     : QDialog(parent)
@@ -22,9 +23,10 @@ QString EditRecordDialog::getDesc() {
 }
 
 void EditRecordDialog::setCreationDateTime(QDateTime datetime) {
-    ui->LabelDateTimeCreatedDisplay->setText(datetime.toString());
+    ui->LabelDateTimeCreatedDisplay->setText(datetime.toString(GLOBAL_DATE_TIME_FORMAT));
 }
 void EditRecordDialog::setRecentMealDateTime(QDateTime datetime) {
+    ui->DateTimeEditRecentMeal->setDisplayFormat(GLOBAL_DATE_TIME_FORMAT);
     ui->DateTimeEditRecentMeal->setDateTime(datetime);
 }
 

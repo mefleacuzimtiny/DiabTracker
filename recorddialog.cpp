@@ -1,6 +1,8 @@
 #include "recorddialog.h"
 #include "ui_recorddialog.h"
 
+const QString GLOBAL_DATE_TIME_FORMAT = "hh:mm AP, ddd, dd MMMM yyyy";
+
 RecordDialog::RecordDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::RecordDialog)
@@ -18,7 +20,7 @@ QString RecordDialog::getValue() const {
 }
 
 QDateTime RecordDialog::getDateTime() const {
-    return ui->DateTimeEditLastMeal->dateTime();
+    return ui->DateTimeEditRecentMeal->dateTime();
 }
 
 QString RecordDialog::getDescription() const {
@@ -26,5 +28,6 @@ QString RecordDialog::getDescription() const {
 }
 
 void RecordDialog::setDateTimeEdit(QDateTime datetime) {
-    return ui->DateTimeEditLastMeal->setDateTime(datetime);
+    ui->DateTimeEditRecentMeal->setDisplayFormat(GLOBAL_DATE_TIME_FORMAT);
+    return ui->DateTimeEditRecentMeal->setDateTime(datetime);
 }

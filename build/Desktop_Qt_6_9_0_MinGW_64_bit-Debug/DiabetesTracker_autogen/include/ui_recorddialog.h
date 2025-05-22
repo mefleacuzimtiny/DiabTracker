@@ -32,7 +32,7 @@ public:
     QLabel *LabelDesc;
     QTextEdit *TextEditDesc;
     QDialogButtonBox *buttonBox;
-    QDateTimeEdit *DateTimeEditLastMeal;
+    QDateTimeEdit *DateTimeEditRecentMeal;
 
     void setupUi(QDialog *RecordDialog)
     {
@@ -73,10 +73,10 @@ public:
 
         formLayout->setWidget(3, QFormLayout::ItemRole::SpanningRole, buttonBox);
 
-        DateTimeEditLastMeal = new QDateTimeEdit(RecordDialog);
-        DateTimeEditLastMeal->setObjectName("DateTimeEditLastMeal");
+        DateTimeEditRecentMeal = new QDateTimeEdit(RecordDialog);
+        DateTimeEditRecentMeal->setObjectName("DateTimeEditRecentMeal");
 
-        formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, DateTimeEditLastMeal);
+        formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, DateTimeEditRecentMeal);
 
 
         retranslateUi(RecordDialog);
