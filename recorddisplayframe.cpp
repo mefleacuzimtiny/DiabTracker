@@ -4,6 +4,7 @@
 #include "HistoryData.h"
 
 #include <QMessageBox>
+
 #include <string>
 
 const QString GLOBAL_DATE_TIME_FORMAT = "hh:mm AP, ddd, dd MMMM yyyy";

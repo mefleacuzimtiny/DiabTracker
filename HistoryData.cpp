@@ -1,11 +1,17 @@
 #include "HistoryData.h"
+
 #include <fstream>
+#include <algorithm>
+
 #include <QVBoxLayout>
 
 std::vector <RecordDisplayFrame*> HistoryData;
 
 void deleteRecord(RecordDisplayFrame* recdisp) {
-
+    auto it = std::find(HistoryData.begin(), HistoryData.end(), recdisp);
+    if (it != HistoryData.end()) {
+        HistoryData.erase(it);
+    }
 }
 
 void addRecord(RecordDisplayFrame* recdisp) {
@@ -29,8 +35,10 @@ void writeRecordsToFile() {
     fout.close();
 }
 
-std::vector<std::array<std::string, 4>> parseCSV(std::ifstream& file) {
-    std::vector<std::array<std::string, 4>> records;
+using rec_vect = std::vector<std::array<std::string, 4>>;
+
+rec_vect parseCSV(std::ifstream& file) {
+    rec_vect records;
     std::array<std::string, 4> currentRecord;
     std::string currentField;
     int fieldIndex = 0;
@@ -79,7 +87,7 @@ std::vector<std::array<std::string, 4>> parseCSV(std::ifstream& file) {
 
 void loadRecords(QVBoxLayout* History, std::string filename) {
 
-    std::vector<std::array<std::string, 4>> records;
+    rec_vect records;
 
     std::ifstream file(filename, std::ios::app);
     if (file.is_open()) {
