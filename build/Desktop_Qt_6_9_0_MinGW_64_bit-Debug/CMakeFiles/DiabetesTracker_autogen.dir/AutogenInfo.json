@@ -395,6 +395,12 @@
 			null
 		],
 		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/Statistics.h",
+			"MU",
+			"EWIEGA46WW/moc_Statistics.cpp",
+			null
+		],
+		[
 			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/editrecorddialog.h",
 			"MU",
 			"EWIEGA46WW/moc_editrecorddialog.cpp",
@@ -498,6 +504,11 @@
 	[
 		[
 			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/HistoryData.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/Statistics.cpp",
 			"MU",
 			null
 		],

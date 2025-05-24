@@ -105,6 +105,14 @@ build CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj: CXX_COMPILER__Diabetes
   OBJECT_DIR = CMakeFiles\DiabetesTracker.dir
   OBJECT_FILE_DIR = CMakeFiles\DiabetesTracker.dir
 
+build CMakeFiles/DiabetesTracker.dir/Statistics.cpp.obj: CXX_COMPILER__DiabetesTracker_unscanned_Debug C$:/Users/MeFlea/Desktop/First$ Sem$ Projects/DiabTrackerQT/DiabetesTracker/Statistics.cpp || cmake_object_order_depends_target_DiabetesTracker
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\DiabetesTracker.dir\Statistics.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/include" -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -isystem C:/Qt/6.9.0/mingw_64/include/QtCharts -isystem C:/Qt/6.9.0/mingw_64/include/QtOpenGL -isystem C:/Qt/6.9.0/mingw_64/include/QtOpenGLWidgets
+  OBJECT_DIR = CMakeFiles\DiabetesTracker.dir
+  OBJECT_FILE_DIR = CMakeFiles\DiabetesTracker.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DiabetesTracker
@@ -113,7 +121,7 @@ build CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj: CXX_COMPILER__Diabetes
 #############################################
 # Link the executable DiabetesTracker.exe
 
-build DiabetesTracker.exe: CXX_EXECUTABLE_LINKER__DiabetesTracker_Debug CMakeFiles/DiabetesTracker.dir/DiabetesTracker_autogen/mocs_compilation.cpp.obj CMakeFiles/DiabetesTracker.dir/main.cpp.obj CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj | C$:/Qt/6.9.0/mingw_64/lib/libQt6Charts.a C$:/Qt/6.9.0/mingw_64/lib/libQt6OpenGLWidgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || DiabetesTracker_autogen DiabetesTracker_autogen_timestamp_deps
+build DiabetesTracker.exe: CXX_EXECUTABLE_LINKER__DiabetesTracker_Debug CMakeFiles/DiabetesTracker.dir/DiabetesTracker_autogen/mocs_compilation.cpp.obj CMakeFiles/DiabetesTracker.dir/main.cpp.obj CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj CMakeFiles/DiabetesTracker.dir/Statistics.cpp.obj | C$:/Qt/6.9.0/mingw_64/lib/libQt6Charts.a C$:/Qt/6.9.0/mingw_64/lib/libQt6OpenGLWidgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || DiabetesTracker_autogen DiabetesTracker_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.9.0/mingw_64/lib/libQt6Charts.a  C:/Qt/6.9.0/mingw_64/lib/libQt6OpenGLWidgets.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.9.0/mingw_64/lib/libQt6OpenGL.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -luser32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

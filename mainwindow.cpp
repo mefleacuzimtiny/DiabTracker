@@ -117,9 +117,13 @@ void MainWindow::on_AddButton_clicked() {
             fout.close();
         }
     }
+    recordInputs.deleteLater();
 }
 
 
+struct BFL {
+
+};
 
 void MainWindow::on_GenStatsButton_clicked()
 {
@@ -131,11 +135,12 @@ void MainWindow::on_GenStatsButton_clicked()
     QGridLayout* Stats = getStatsLayout();
 
     QLineSeries *series = new QLineSeries();
+    series->setName("Glucose Level");
 
     sortRecords();
 
     for (RecordDisplayFrame* recdisp: HistoryData) {
-        series->append(recdisp->DateTimeCreation.toMSecsSinceEpoch(), recdisp->Reading);    // each call to serieis->append() adds a QPointF object
+        series->append(recdisp->DateTimeCreation.toMSecsSinceEpoch(), recdisp->Reading);    // each call to series->append() adds a QPointF object
     }                                                                                       // to the QLineSeries. Read the code below to understand more
 
     // computing linear regression, basically, a whole bunch of math. Look at the equations in the report to get an idea
@@ -148,7 +153,7 @@ void MainWindow::on_GenStatsButton_clicked()
 
     double xSum = std::accumulate(x.begin(), x.end(), 0.0);     // std::accumulate() basically sums up all the values of the vector, and the
     double ySum = std::accumulate(y.begin(), y.end(), 0.0);     // 0.0 tells it the starting value to add on top of
-    double xMean = xSum / x.size();
+    double xMean = xSum / x.size();                             // I mean this part is pretty self-explanatory: it gets the mean
     double yMean = ySum / y.size();
 
     double numerator = 0, denominator = 0;
@@ -165,13 +170,13 @@ void MainWindow::on_GenStatsButton_clicked()
 
     QLineSeries *bestFitSeries = new QLineSeries();
     bestFitSeries->setName("Best Fit Line");
-    bestFitSeries->append(xMin, slope * xMin + intercept);
-    bestFitSeries->append(xMax, slope * xMax + intercept);
+    bestFitSeries->append(xMin, slope * xMin + intercept);      // add a QPointF to the left, and calculate the y-value accordingly
+    bestFitSeries->append(xMax, slope * xMax + intercept);      // Do the same for the right point... when it gets drawn, you get a straight line b/w 2 points
 
     // building chart
     QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->addSeries(bestFitSeries);
+    chart->addSeries(series);               // cuz series holds the raw data (for the jagged plot)
+    chart->addSeries(bestFitSeries);        // for the best-fit line
     chart->setTitle("Glucose Levels Over Time (with Best Fit Line)");
 
     // setting x axis
@@ -201,9 +206,6 @@ void MainWindow::on_GenStatsButton_clicked()
 
         axisY->setRange(yMin - padding, yMax + padding);
     }
-
-
-
 
     // Chart view
     QChartView *chartView = new QChartView(chart);
