@@ -25,6 +25,7 @@ void addRecord(RecordDisplayFrame* recdisp);
 void dumpRecords();
 void writeRecordsToFile();
 void loadRecords(QVBoxLayout* History, std::string filename);
+void sortRecords();
 std::vector <std::array <std::string, 4>> parseCSV(std::ifstream& fout);
 
 #endif // HISTORYDATA_H

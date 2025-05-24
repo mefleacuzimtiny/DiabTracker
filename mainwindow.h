@@ -22,6 +22,7 @@ public:
     ~MainWindow();
 
     QVBoxLayout* getHistoryLayout();
+    QGridLayout* getStatsLayout();
 
 
 private slots:
@@ -30,6 +31,8 @@ private slots:
     void on_AddButton_clicked();
 
     void on_actionSave_Data_triggered();
+
+    void on_GenStatsButton_clicked();
 
 private:
     Ui::MainWindow *ui;

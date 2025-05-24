@@ -10,6 +10,12 @@
 #include <QPushButton>
 #include <QMessageBox>
 
+#include <QtCharts/QChartView>
+#include <QtCharts/QChart>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QDateTimeAxis>
+#include <QtCharts/QValueAxis>
+
 #include <array>
 #include <fstream>
 
@@ -25,6 +31,11 @@ MainWindow::~MainWindow() {
 
 QVBoxLayout* MainWindow::getHistoryLayout() {
     return qobject_cast<QVBoxLayout*>(ui->HistoryContents->layout());
+}
+
+QGridLayout *MainWindow::getStatsLayout()
+{
+    return qobject_cast<QGridLayout*>(ui->StatsContents->layout());
 }
 
 void MainWindow::on_actionOpen_History_triggered() {
@@ -108,4 +119,95 @@ void MainWindow::on_AddButton_clicked() {
     }
 }
 
+
+
+void MainWindow::on_GenStatsButton_clicked()
+{
+    if (HistoryData.size() == 0) {
+        QMessageBox::critical(this, "Error", "There is no data to generate statistics!");
+        return;
+    }
+
+    QGridLayout* Stats = getStatsLayout();
+
+    QLineSeries *series = new QLineSeries();
+
+    sortRecords();
+
+    for (RecordDisplayFrame* recdisp: HistoryData) {
+        series->append(recdisp->DateTimeCreation.toMSecsSinceEpoch(), recdisp->Reading);    // each call to serieis->append() adds a QPointF object
+    }                                                                                       // to the QLineSeries. Read the code below to understand more
+
+    // computing linear regression, basically, a whole bunch of math. Look at the equations in the report to get an idea
+    // of what's happening
+    QVector<double> x, y;
+    for (const QPointF& point : series->points()) {
+        x.append(point.x());
+        y.append(point.y());
+    }
+
+    double xSum = std::accumulate(x.begin(), x.end(), 0.0);     // std::accumulate() basically sums up all the values of the vector, and the
+    double ySum = std::accumulate(y.begin(), y.end(), 0.0);     // 0.0 tells it the starting value to add on top of
+    double xMean = xSum / x.size();
+    double yMean = ySum / y.size();
+
+    double numerator = 0, denominator = 0;
+    for (int i = 0; i < x.size(); i++) {
+        numerator += (x[i] - xMean) * (y[i] - yMean);
+        denominator += (x[i] - xMean) * (x[i] - xMean);
+    }
+    double slope = numerator / denominator;
+    double intercept = yMean - slope * xMean;
+
+    // generating line of Best Fit
+    double xMin = *std::min_element(x.begin(), x.end());
+    double xMax = *std::max_element(x.begin(), x.end());
+
+    QLineSeries *bestFitSeries = new QLineSeries();
+    bestFitSeries->setName("Best Fit Line");
+    bestFitSeries->append(xMin, slope * xMin + intercept);
+    bestFitSeries->append(xMax, slope * xMax + intercept);
+
+    // building chart
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->addSeries(bestFitSeries);
+    chart->setTitle("Glucose Levels Over Time (with Best Fit Line)");
+
+    // setting x axis
+    QDateTimeAxis *axisX = new QDateTimeAxis;
+    axisX->setFormat("MMM dd hh:mm");
+    axisX->setTitleText("Date & Time");
+    axisX->setTickCount(5);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+    bestFitSeries->attachAxis(axisX);
+
+    // setting y axis
+    QValueAxis *axisY = new QValueAxis;
+    axisY->setLabelFormat("%i");
+    axisY->setTitleText("Glucose Level (mg/dL)");
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+    bestFitSeries->attachAxis(axisY);
+
+    // axisY->setRange(80, 160); making the y-axis scale dynamic to sizes
+    if (!y.isEmpty()) {
+        qreal yMin = *std::min_element(y.begin(), y.end());
+        qreal yMax = *std::max_element(y.begin(), y.end());
+
+        qreal padding = (yMax - yMin) * 0.1;    // 10% padding
+        if (padding == 0) padding = 10;         // fallback if all values are the same
+
+        axisY->setRange(yMin - padding, yMax + padding);
+    }
+
+
+
+
+    // Chart view
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    Stats->addWidget(chartView, 0, 0);
+}
 

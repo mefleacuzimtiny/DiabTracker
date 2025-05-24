@@ -117,3 +117,14 @@ void loadRecords(QVBoxLayout* History, std::string filename) {
         addRecord(recdisp);
     }
 }
+
+void sortRecords() {
+    // simple bubble sort
+    for (int i = 0; i < HistoryData.size() - 1; ++i) {
+        for (int j = 0; j < HistoryData.size() - i - 1; ++j) {
+            if (HistoryData[j]->DateTimeCreation > HistoryData[j + 1]->DateTimeCreation) {
+                std::swap(HistoryData[j], HistoryData[j + 1]);
+            }
+        }
+    }
+}
