@@ -1,5 +1,6 @@
 #include "HistoryData.h"
 #include <fstream>
+#include <QVBoxLayout>
 
 std::vector <RecordDisplayFrame*> HistoryData;
 
@@ -28,62 +29,83 @@ void writeRecordsToFile() {
     fout.close();
 }
 
-std::vector <std::array <std::string, 4>> parseCSV(std::ifstream& fout) {
-    std::vector <std::array <std::string, 4>> records;
-    std::array <std::string, 4> currentRecord;
-    std::string field;
-    int iField = 0;
+std::vector<std::array<std::string, 4>> parseCSV(std::ifstream& file) {
+    std::vector<std::array<std::string, 4>> records;
+    std::array<std::string, 4> currentRecord;
+    std::string currentField;
+    int fieldIndex = 0;
     bool insideQuotes = false;
 
-    char chr;
-    while(fout.get(chr)) {
-
-        if (chr == '"') {
-            insideQuotes = ! insideQuotes;
-        } else if (chr == ',') {
+    char c;
+    while (file.get(c)) {
+        if (c == '"') {
+            insideQuotes = !insideQuotes; // Toggle quote state
+        } else if (c == ',') {
             if (insideQuotes) {
-                field += chr;
+                currentField += c;
             } else {
-                if (iField < 4) {
-                    currentRecord[iField] = field;
-                    field = "";
+                if (fieldIndex < 4) {
+                    currentRecord[fieldIndex++] = currentField;
+                    currentField.clear();
                 }
             }
-        } else if (chr == '\n') {
+        } else if (c == '\n') {
             if (insideQuotes) {
-                field += chr;
+                currentField += c; // Preserve newline inside quotes
             } else {
-                currentRecord[iField] = field;
+                currentRecord[fieldIndex] = currentField;
                 records.push_back(currentRecord);
 
-                iField = 0;
+                // Reset state
                 currentRecord = {};
-                field = "";
+                currentField.clear();
+                fieldIndex = 0;
             }
         } else {
-            field += chr;
+            currentField += c;
         }
     }
 
-    if (field != "" || iField == 3) {
-        currentRecord[iField] = field;
+    // Handle last record if file doesn’t end with newline
+    if (!currentField.empty() || fieldIndex == 3) {
+        currentRecord[fieldIndex] = currentField;
         records.push_back(currentRecord);
     }
+
+    // store records in file
 
     return records;
 }
 
-void displayRecords() {
-    // QVBoxLayout* History = this->getHistoryLayout();
-    // for (int i = 0; i < records.size(); i++) {
-    //     RecordDisplayFrame* recdisp = new RecordDisplayFrame;
-    //     recdisp->Reading = std::stoi(records[i][0]);
-    //     recdisp->Description = QString::fromStdString(records[i][1]);
-    //     recdisp->RecentMealDateTime = QDateTime::fromString(QString::fromStdString(records[i][2]), "ddd MMM dd HH:mm:ss yyyy");
-    //     recdisp->DateTimeCreation = QDateTime::fromString(QString::fromStdString(records[i][3]), "ddd MMM dd HH:mm:ss yyyy");
+void loadRecords(QVBoxLayout* History, std::string filename) {
+
+    std::vector<std::array<std::string, 4>> records;
+
+    std::ifstream file(filename, std::ios::app);
+    if (file.is_open()) {
+        records = parseCSV(file);
+        file.close();
+    }
 
 
-    //     History->insertWidget(0, recdisp);
-    //     addRecord(recdisp);
-    // }
+    for (int i = 0; i < records.size(); i++) {
+        RecordDisplayFrame* recdisp = new RecordDisplayFrame;
+        // todo: fix the damn CSV parser!!!
+        qDebug() << "Value: " << records[i][0] << "\n"
+                 << "Description: " << records[i][1] << "\n"
+                 << "RecentMealTime: " << records[i][2] << "\n"
+                 << "Date Created: " << records[i][3] << "\n"
+                 << "--------------------------\n";
+
+
+        recdisp->Reading = std::stoi(records[i][0]);
+        recdisp->Description = QString::fromStdString(records[i][1]);
+        recdisp->RecentMealDateTime = QDateTime::fromString(QString::fromStdString(records[i][2]), "ddd MMM dd HH:mm:ss yyyy");
+        recdisp->DateTimeCreation = QDateTime::fromString(QString::fromStdString(records[i][3]), "ddd MMM dd HH:mm:ss yyyy");
+
+        recdisp->updateValues();
+
+        History->insertWidget(0, recdisp);
+        addRecord(recdisp);
+    }
 }

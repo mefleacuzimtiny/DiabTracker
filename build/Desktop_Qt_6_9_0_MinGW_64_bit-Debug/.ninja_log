@@ -1,100 +1,69 @@
 # ninja log v6
-347	7618	7696435545649859	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-355	6851	7696435545729800	CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj	c259b421276d98cb
-1597	10951	7696434082514978	CMakeFiles/DiabetesTracker.dir/main.cpp.obj	5edf9c4c3b980a23
-51	338	7696435542680227	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-351	7388	7696435545689888	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-340	7647	7696435545570138	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
-1593	10985	7696434082473211	CMakeFiles/DiabetesTracker.dir/DiabetesTracker_autogen/mocs_compilation.cpp.obj	f7faebbd680cf47f
-51	338	7696435542680227	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-7648	8313	7696435618657026	DiabetesTracker.exe	a9b7fe642feaac7a
-51	338	7696435542680227	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-29	862	7696448260933932	build.ninja	2452450d462a65eb
-51	338	7696435542680227	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-311	6725	7690468481914610	CMakeFiles/DiabetesTracker.dir/recorddialogue.cpp.obj	401c20c93926964d
-344	7518	7696435545610028	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-32	1469	7696448260933932	build.ninja	2452450d462a65eb
-44	258	7696448262681106	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-44	258	7696448262681106	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-44	258	7696448262681106	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-44	258	7696448262681106	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-269	6373	7696448264931125	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-262	6623	7696448264861307	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-266	6738	7696448264891235	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-259	6787	7696448264831698	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
-6787	7211	7696448330112219	DiabetesTracker.exe	a9b7fe642feaac7a
-52	317	7696522938925704	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-52	317	7696522938925704	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-52	317	7696522938925704	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-52	317	7696522938925704	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-327	7884	7696522941668368	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-323	7885	7696522941638453	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-331	7887	7696522941718246	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-59	344	7696523069835655	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-59	344	7696523069835655	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-59	344	7696523069835655	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-59	344	7696523069835655	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-358	6747	7696523072827649	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-350	6903	7696523072747868	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-354	7056	7696523072777780	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-70	499	7696523584917745	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-70	499	7696523584917745	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-70	499	7696523584917745	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-70	499	7696523584917745	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-512	6643	7696523589335924	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-505	6966	7696523589266114	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-508	6988	7696523589296035	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-34	562	7696529775483460	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-34	562	7696529775483460	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-34	562	7696529775483460	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-34	562	7696529775483460	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-574	7940	7696529780889030	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-567	8190	7696529780819205	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-571	8201	7696529780849121	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-56	2127	7696531719662236	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-56	2127	7696531719662236	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-56	2127	7696531719662236	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-56	2127	7696531719662236	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-2140	10368	7696531740496542	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-2133	10523	7696531740426718	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-2136	10625	7696531740456631	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-353	1534	7696532615888205	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-353	1534	7696532615888205	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-353	1534	7696532615888205	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-353	1534	7696532615888205	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-1547	9522	7696532627826282	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-1539	9668	7696532627746500	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-1543	9704	7696532627786393	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-56	339	7696533518038993	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-56	339	7696533518038993	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-56	339	7696533518038993	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-56	339	7696533518038993	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+358	7666	7696816647124437	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+362	7671	7696816647164338	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
 355	7284	7696533521030990	CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj	c259b421276d98cb
-351	7465	7696533520991105	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-348	7897	7696533520951205	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-344	8032	7696533520921287	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-54	319	7696534211850902	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-54	319	7696534211850902	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-54	319	7696534211850902	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-54	319	7696534211850902	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-333	6734	7696534214633393	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-325	7035	7696534214553608	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-329	7064	7696534214593500	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-76	387	7696534998902803	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-76	387	7696534998902803	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-76	387	7696534998902803	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-76	387	7696534998902803	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-399	6427	7696535002134219	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-392	6545	7696535002054369	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-396	6566	7696535002094260	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-388	6779	7696535002014481	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
-6779	7617	7696535065933553	DiabetesTracker.exe	a9b7fe642feaac7a
-57	354	7696535866548402	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-57	354	7696535866548402	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-57	354	7696535866548402	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
-57	354	7696535866548402	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
-367	6221	7696535869650109	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
-363	6558	7696535869610218	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
-360	6634	7696535869570320	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
-355	6801	7696535869530431	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
-6801	7557	7696535933988074	DiabetesTracker.exe	a9b7fe642feaac7a
+1597	10951	7696434082514978	CMakeFiles/DiabetesTracker.dir/main.cpp.obj	5edf9c4c3b980a23
+104	352	7696816644579912	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+366	7662	7696816647197031	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+354	7824	7696816647074573	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
+1593	10985	7696434082473211	CMakeFiles/DiabetesTracker.dir/DiabetesTracker_autogen/mocs_compilation.cpp.obj	f7faebbd680cf47f
+104	352	7696816644579912	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+7824	8824	7696816721777056	DiabetesTracker.exe	a9b7fe642feaac7a
+104	352	7696816644579912	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+32	1469	7696448260933932	build.ninja	2452450d462a65eb
+104	352	7696816644579912	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+311	6725	7690468481914610	CMakeFiles/DiabetesTracker.dir/recorddialogue.cpp.obj	401c20c93926964d
+98	417	7697565274001374	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+98	417	7697565274001374	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+98	417	7697565274001374	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+98	417	7697565274001374	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+426	11222	7697565277279418	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
+423	11225	7697565277239560	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+418	11239	7697565277199058	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
+430	11242	7697565277319632	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+51	351	7697566610150009	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+51	351	7697566610150009	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+51	351	7697566610150009	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+51	351	7697566610150009	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+357	8725	7697566613204210	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+364	8855	7697566613274278	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+360	8974	7697566613244101	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
+353	9115	7697566613164499	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
+58	346	7697570346105439	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+58	346	7697570346105439	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+58	346	7697570346105439	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+58	346	7697570346105439	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+363	7353	7697570349155267	CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj	c259b421276d98cb
+359	7578	7697570349117321	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+352	7657	7697570349045187	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+355	7863	7697570349075111	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
+61	331	7697570740600878	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+61	331	7697570740600878	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+61	331	7697570740600878	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+61	331	7697570740600878	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+348	7191	7697570743461434	CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj	c259b421276d98cb
+344	7366	7697570743429765	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+340	7591	7697570743389874	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
+336	7674	7697570743349983	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+333	7751	7697570743310087	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
+7751	8957	7697570817492983	DiabetesTracker.exe	a9b7fe642feaac7a
+59	405	7697572876993391	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+59	405	7697572876993391	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+59	405	7697572876993391	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+59	405	7697572876993391	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+423	8390	7697572880620703	CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj	c259b421276d98cb
+419	8737	7697572880582631	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+411	9101	7697572880510715	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+415	9193	7697572880541693	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
+407	9246	7697572880460857	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
+9247	10084	7697572968864167	DiabetesTracker.exe	a9b7fe642feaac7a
+48	266	7697591600478151	DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+48	266	7697591600478151	DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+48	266	7697591600478151	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/timestamp	cc26d79a71e95197
+48	266	7697591600478151	C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/DiabetesTracker_autogen/mocs_compilation.cpp	cc26d79a71e95197
+281	9040	7697591602811554	CMakeFiles/DiabetesTracker.dir/HistoryData.cpp.obj	c259b421276d98cb
+268	9042	7697591602671931	CMakeFiles/DiabetesTracker.dir/mainwindow.cpp.obj	a72023c9625fe45
+271	9045	7697591602701851	CMakeFiles/DiabetesTracker.dir/recorddialog.cpp.obj	9fafaa1d01aab701
+274	9046	7697591602741743	CMakeFiles/DiabetesTracker.dir/editrecorddialog.cpp.obj	bfce0472cef168e4
+278	9099	7697591602771663	CMakeFiles/DiabetesTracker.dir/recorddisplayframe.cpp.obj	4f40ee9e2e896c7b
+9099	9923	7697591690985780	DiabetesTracker.exe	a9b7fe642feaac7a

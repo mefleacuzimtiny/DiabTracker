@@ -1,6 +1,8 @@
 #ifndef HISTORYDATA_H
 #define HISTORYDATA_H
 
+#include <QVBoxLayout>
+
 #include <list>
 #include <fstream>
 #include <vector>
@@ -22,7 +24,7 @@ void deleteRecord(RecordDisplayFrame* recdisp);
 void addRecord(RecordDisplayFrame* recdisp);
 void dumpRecords();
 void writeRecordsToFile();
-void displayRecords();
+void loadRecords(QVBoxLayout* History, std::string filename);
 std::vector <std::array <std::string, 4>> parseCSV(std::ifstream& fout);
 
 #endif // HISTORYDATA_H
