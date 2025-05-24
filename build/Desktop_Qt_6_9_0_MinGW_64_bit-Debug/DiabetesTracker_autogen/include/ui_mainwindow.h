@@ -45,7 +45,6 @@ public:
     QScrollArea *StatsScrollArea;
     QWidget *StatsContents;
     QGridLayout *gridLayout;
-    QSpacerItem *verticalSpacer_2;
     QPushButton *AddButton;
     QMenuBar *menubar;
     QMenu *menuFile;
@@ -67,7 +66,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName("tabWidget");
-        tabWidget->setGeometry(QRect(10, 10, 791, 601));
+        tabWidget->setGeometry(QRect(10, 10, 791, 591));
         History = new QWidget();
         History->setObjectName("History");
         verticalLayout_2 = new QVBoxLayout(History);
@@ -77,7 +76,7 @@ public:
         HistoryScrollArea->setWidgetResizable(true);
         HistoryContents = new QWidget();
         HistoryContents->setObjectName("HistoryContents");
-        HistoryContents->setGeometry(QRect(0, 0, 763, 540));
+        HistoryContents->setGeometry(QRect(0, 0, 763, 530));
         verticalLayout = new QVBoxLayout(HistoryContents);
         verticalLayout->setObjectName("verticalLayout");
         verticalSpacer = new QSpacerItem(20, 264, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -100,16 +99,13 @@ public:
 
         StatsScrollArea = new QScrollArea(Statistics);
         StatsScrollArea->setObjectName("StatsScrollArea");
+        StatsScrollArea->setMinimumSize(QSize(0, 496));
         StatsScrollArea->setWidgetResizable(true);
         StatsContents = new QWidget();
         StatsContents->setObjectName("StatsContents");
-        StatsContents->setGeometry(QRect(0, 0, 763, 504));
+        StatsContents->setGeometry(QRect(0, 0, 763, 494));
         gridLayout = new QGridLayout(StatsContents);
         gridLayout->setObjectName("gridLayout");
-        verticalSpacer_2 = new QSpacerItem(20, 479, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 0, 0, 1, 1);
-
         StatsScrollArea->setWidget(StatsContents);
 
         verticalLayout_3->addWidget(StatsScrollArea);

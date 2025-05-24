@@ -24,6 +24,9 @@ public:
     QVBoxLayout* getHistoryLayout();
     QGridLayout* getStatsLayout();
 
+    void genRegression(QGridLayout* Stats);
+    void genSplineRegression(QGridLayout* Stats);
+
 
 private slots:
     void on_actionOpen_History_triggered();

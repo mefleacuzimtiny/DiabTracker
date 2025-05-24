@@ -1520,3 +1520,5 @@ C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/recordd
  uic:ui_recorddialog.h
 C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.cpp
  uic:ui_recorddisplayframe.h
+C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/Statistics.h
+C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/Statistics.cpp
