@@ -24,7 +24,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
 
-        TODO
         recorddialog.h recorddialog.cpp recorddialog.ui
         editrecorddialog.h editrecorddialog.cpp editrecorddialog.ui
         recorddisplayframe.h recorddisplayframe.cpp recorddisplayframe.ui
