@@ -32,6 +32,8 @@ public:
     QAction *actionOpen_History;
     QAction *actionSave_Data;
     QWidget *centralwidget;
+    QPushButton *AddButton;
+    QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
     QWidget *History;
     QVBoxLayout *verticalLayout_2;
@@ -46,7 +48,6 @@ public:
     QWidget *StatsContents;
     QGridLayout *gridLayout;
     QSpacerItem *verticalSpacer_2;
-    QPushButton *AddButton;
     QMenuBar *menubar;
     QMenu *menuFile;
 
@@ -54,7 +55,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(816, 642);
+        MainWindow->resize(808, 640);
         MainWindow->setAnimated(true);
         MainWindow->setTabShape(QTabWidget::TabShape::Rounded);
         actionHistory = new QAction(MainWindow);
@@ -65,9 +66,14 @@ public:
         actionSave_Data->setObjectName("actionSave_Data");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        AddButton = new QPushButton(centralwidget);
+        AddButton->setObjectName("AddButton");
+        AddButton->setGeometry(QRect(710, 520, 50, 50));
+        AddButton->setMinimumSize(QSize(50, 50));
+        gridLayout_2 = new QGridLayout(centralwidget);
+        gridLayout_2->setObjectName("gridLayout_2");
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName("tabWidget");
-        tabWidget->setGeometry(QRect(10, 10, 791, 591));
         History = new QWidget();
         History->setObjectName("History");
         verticalLayout_2 = new QVBoxLayout(History);
@@ -77,7 +83,7 @@ public:
         HistoryScrollArea->setWidgetResizable(true);
         HistoryContents = new QWidget();
         HistoryContents->setObjectName("HistoryContents");
-        HistoryContents->setGeometry(QRect(0, 0, 763, 530));
+        HistoryContents->setGeometry(QRect(0, 0, 758, 532));
         verticalLayout = new QVBoxLayout(HistoryContents);
         verticalLayout->setObjectName("verticalLayout");
         verticalSpacer = new QSpacerItem(20, 264, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -104,7 +110,7 @@ public:
         StatsScrollArea->setWidgetResizable(true);
         StatsContents = new QWidget();
         StatsContents->setObjectName("StatsContents");
-        StatsContents->setGeometry(QRect(0, 0, 763, 494));
+        StatsContents->setGeometry(QRect(0, 0, 758, 496));
         gridLayout = new QGridLayout(StatsContents);
         gridLayout->setObjectName("gridLayout");
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -116,14 +122,13 @@ public:
         verticalLayout_3->addWidget(StatsScrollArea);
 
         tabWidget->addTab(Statistics, QString());
-        AddButton = new QPushButton(centralwidget);
-        AddButton->setObjectName("AddButton");
-        AddButton->setGeometry(QRect(710, 520, 50, 50));
-        AddButton->setMinimumSize(QSize(50, 50));
+
+        gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 816, 25));
+        menubar->setGeometry(QRect(0, 0, 808, 25));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         MainWindow->setMenuBar(menubar);
@@ -134,7 +139,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -146,10 +151,10 @@ public:
         actionHistory->setText(QCoreApplication::translate("MainWindow", "History", nullptr));
         actionOpen_History->setText(QCoreApplication::translate("MainWindow", "Open History", nullptr));
         actionSave_Data->setText(QCoreApplication::translate("MainWindow", "Save Data", nullptr));
+        AddButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(History), QCoreApplication::translate("MainWindow", "History", nullptr));
         GenStatsButton->setText(QCoreApplication::translate("MainWindow", "Generate Statistics", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Statistics), QCoreApplication::translate("MainWindow", "Statistics", nullptr));
-        AddButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 

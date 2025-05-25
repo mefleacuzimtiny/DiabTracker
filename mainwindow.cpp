@@ -27,18 +27,20 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    ui->AddButton->raise(); // Ensure it's above other widgets
-    ui->AddButton->move(this->width() - 70, this->height() - 70); // Adjust as needed
 }
 
 void MainWindow::resizeEvent(QResizeEvent* event) {
     QMainWindow::resizeEvent(event);
 
-    // Move the button to bottom-right with some margin
-    int margin = 20;
+    ui->AddButton->raise();
+
+    int margin = 50;
     int btnWidth = ui->AddButton->width();
     int btnHeight = ui->AddButton->height();
-    ui->AddButton->move(this->width() - btnWidth - margin, this->height() - btnHeight - margin);
+    ui->AddButton->move(
+        ui->centralwidget->width() - btnWidth - margin,
+        ui->centralwidget->height() - btnHeight - margin
+        );
 }
 
 MainWindow::~MainWindow() {
