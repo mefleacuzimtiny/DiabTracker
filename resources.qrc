@@ -1,0 +1,11 @@
+<RCC>
+    <qresource>
+        <file>icons/AddButton.svg</file>
+    </qresource>
+    <qresource>
+        <file>icons/DeleteButton.svg</file>
+    </qresource>
+    <qresource>
+        <file>icons/EditButton.svg</file>
+    </qresource>
+</RCC>

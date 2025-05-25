@@ -380,7 +380,8 @@
 		"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateAdditionalTargetInfo.cmake",
 		"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake",
 		"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake",
+		"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker",
 	"CROSS_CONFIG" : false,

@@ -40,6 +40,8 @@ public:
         if (RecordDisplayFrame->objectName().isEmpty())
             RecordDisplayFrame->setObjectName("RecordDisplayFrame");
         RecordDisplayFrame->resize(741, 109);
+        RecordDisplayFrame->setStyleSheet(QString::fromUtf8("background-color: #323339;\n"
+"color: white;"));
         verticalLayout_2 = new QVBoxLayout(RecordDisplayFrame);
         verticalLayout_2->setObjectName("verticalLayout_2");
         horizontalLayout = new QHBoxLayout();
@@ -84,12 +86,14 @@ public:
 
         ButtonEdit = new QPushButton(RecordDisplayFrame);
         ButtonEdit->setObjectName("ButtonEdit");
+        ButtonEdit->setMinimumSize(QSize(0, 75));
         ButtonEdit->setMaximumSize(QSize(75, 75));
 
         horizontalLayout->addWidget(ButtonEdit);
 
         ButtonDelete = new QPushButton(RecordDisplayFrame);
         ButtonDelete->setObjectName("ButtonDelete");
+        ButtonDelete->setMinimumSize(QSize(0, 75));
         ButtonDelete->setMaximumSize(QSize(75, 75));
 
         horizontalLayout->addWidget(ButtonDelete);

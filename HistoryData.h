@@ -19,12 +19,13 @@
 // is edit the function deleteRecord()
 
 extern std::vector <RecordDisplayFrame*> HistoryData; // extern means it's defined elsewhere
+extern std::string filename;
 
 void deleteRecord(RecordDisplayFrame* recdisp);
 void addRecord(RecordDisplayFrame* recdisp);
 void dumpRecords();
 void writeRecordsToFile();
-void loadRecords(QVBoxLayout* History, std::string filename);
+void loadRecords(QVBoxLayout* History);
 void sortRecords();
 std::vector <std::array <std::string, 4>> parseCSV(std::ifstream& fout);
 

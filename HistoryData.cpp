@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 
 std::vector <RecordDisplayFrame*> HistoryData;
+std::string filename;
 
 void deleteRecord(RecordDisplayFrame* recdisp) {
     auto it = std::find(HistoryData.begin(), HistoryData.end(), recdisp);
@@ -25,7 +26,7 @@ void dumpRecords() {
 }
 
 void writeRecordsToFile() {
-    std::ofstream fout("RecordHistory.txt");
+    std::ofstream fout(filename);
     if (!fout.is_open()) {
         return;
     }
@@ -85,7 +86,7 @@ rec_vect parseCSV(std::ifstream& file) {
     return records;
 }
 
-void loadRecords(QVBoxLayout* History, std::string filename) {
+void loadRecords(QVBoxLayout* History) {
 
     rec_vect records;
 
@@ -98,7 +99,7 @@ void loadRecords(QVBoxLayout* History, std::string filename) {
 
     for (int i = 0; i < records.size(); i++) {
         RecordDisplayFrame* recdisp = new RecordDisplayFrame;
-        // todo: fix the damn CSV parser!!!
+
         qDebug() << "Value: " << records[i][0] << "\n"
                  << "Description: " << records[i][1] << "\n"
                  << "RecentMealTime: " << records[i][2] << "\n"

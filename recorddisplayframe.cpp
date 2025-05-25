@@ -14,6 +14,45 @@ RecordDisplayFrame::RecordDisplayFrame(QWidget *parent)
     , ui(new Ui::RecordDisplayFrame)
 {
     ui->setupUi(this);
+
+    ui->ButtonDelete->setStyleSheet(R"(
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;  /* Half of width/height to make it round */
+            font-size: 50px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+        QPushButton:pressed {
+            background-color: #1c5980;
+        }
+    )");
+    ui->ButtonDelete->setIcon(QIcon(":/icons/DeleteButton.svg"));
+    ui->ButtonDelete->setIconSize(QSize(75,75));
+    ui->ButtonDelete->setText("");
+
+    ui->ButtonEdit->setStyleSheet(R"(
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;  /* Half of width/height to make it round */
+            font-size: 50px;
+            box-shadow: 10px 10px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+        QPushButton:pressed {
+            background-color: #1c5980;
+        }
+    )");
+    ui->ButtonEdit->setIcon(QIcon(":/icons/EditButton.svg"));
+    ui->ButtonEdit->setIconSize(QSize(75,75));
+    ui->ButtonEdit->setText("");
 }
 
 RecordDisplayFrame::~RecordDisplayFrame()
@@ -59,10 +98,10 @@ QString RecordDisplayFrame::getTimeSinceMeal()
         }
     }
 
-    if (!result.isEmpty()) {                // if result contains something, add " ago" at the end
-        result += " ago";
+    if (!result.isEmpty()) {                // if result contains something, add " after eating" at the end
+        result += " after eating";
     } else {
-        result = "just now";                // else, just make it "just now"
+        result = "Meal eaten recently";                // else, just make it "Meal eaten recently"
     }
 
     return result;

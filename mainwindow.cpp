@@ -41,6 +41,30 @@ void MainWindow::resizeEvent(QResizeEvent* event) {
         ui->centralwidget->width() - btnWidth - margin,
         ui->centralwidget->height() - btnHeight - margin
         );
+
+    ui->AddButton->setStyleSheet(R"(
+        QPushButton {
+            color: white;
+            border: 2px solid #d6b5d2;
+            border-radius: 25px;  /* Half of width/height to make it round */
+        }
+        QPushButton:hover {
+            background: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #fddce3,   /* lighter orange */
+                stop:1 #f4b3bb    /* deeper orange */
+            );
+            color: #d6b5d2;
+            background-color: #fddce3;
+        }
+        QPushButton:pressed {
+            background-color: #f4b3bb;
+        }
+    )");
+
+    ui->AddButton->setIcon(QIcon(":/icons/AddButton.svg"));     // looks inside the resources.qrc file we made to search for the svg
+    ui->AddButton->setIconSize(QSize(45, 45));  // Adjust size
+    ui->AddButton->setText("");  // No text
 }
 
 MainWindow::~MainWindow() {
@@ -80,13 +104,13 @@ void MainWindow::genSplineRegression(QGridLayout* Stats)
 void MainWindow::on_actionOpen_History_triggered() {
     // add popup asking for directory to text file containing records
 
-    std::string filename = "RecordHistory.txt";
+    filename = "RecordHistory.csv";
     // parse inputed text file based on directory and store data
     // for each item in the data, generate a RecordDisplayFrame widget and store its pointer in HistoryData
 
     QVBoxLayout* History = this->getHistoryLayout();
 
-    loadRecords(History, filename);
+    loadRecords(History);
 
     /* PARSING PSEUDOCODE:
     for each character in file:
@@ -120,6 +144,10 @@ void MainWindow::on_actionOpen_History_triggered() {
 
 void MainWindow::on_actionSave_Data_triggered()
 {
+    // filename = "RecordHistory.csv";
+    if (filename == "") {
+        //Dialogue to enter filename
+    }
     writeRecordsToFile();
 }
 
@@ -149,12 +177,6 @@ void MainWindow::on_AddButton_clicked() {
         History->insertWidget(0, recdisp);
 
         addRecord(recdisp);
-
-        std::fstream fout("RecordHistory.txt", std::ios::app);
-        if (fout.is_open()) {
-            fout << recdisp->repr() << '\n';
-            fout.close();
-        }
     }
     recordInputs.deleteLater();
 }
