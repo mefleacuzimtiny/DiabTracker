@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -24,7 +25,9 @@ class Ui_RecordDisplayFrame
 {
 public:
     QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout;
+    QWidget *contentContainer_2;
+    QHBoxLayout *contentContainer;
+    QFrame *LabelsGrid;
     QGridLayout *gridLayout;
     QLabel *LabelDescription;
     QLabel *LabelValue;
@@ -39,67 +42,75 @@ public:
     {
         if (RecordDisplayFrame->objectName().isEmpty())
             RecordDisplayFrame->setObjectName("RecordDisplayFrame");
-        RecordDisplayFrame->resize(741, 109);
+        RecordDisplayFrame->resize(801, 164);
         RecordDisplayFrame->setStyleSheet(QString::fromUtf8("background-color: #323339;\n"
-"color: white;"));
+"color: white;\n"
+""));
         verticalLayout_2 = new QVBoxLayout(RecordDisplayFrame);
         verticalLayout_2->setObjectName("verticalLayout_2");
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
-        gridLayout = new QGridLayout();
+        contentContainer_2 = new QWidget(RecordDisplayFrame);
+        contentContainer_2->setObjectName("contentContainer_2");
+        contentContainer_2->setStyleSheet(QString::fromUtf8("border: 1px solid gray;\n"
+"border-radius: 25px;"));
+        contentContainer = new QHBoxLayout(contentContainer_2);
+        contentContainer->setObjectName("contentContainer");
+        LabelsGrid = new QFrame(contentContainer_2);
+        LabelsGrid->setObjectName("LabelsGrid");
+        LabelsGrid->setStyleSheet(QString::fromUtf8("border:none;"));
+        gridLayout = new QGridLayout(LabelsGrid);
         gridLayout->setObjectName("gridLayout");
-        LabelDescription = new QLabel(RecordDisplayFrame);
+        LabelDescription = new QLabel(LabelsGrid);
         LabelDescription->setObjectName("LabelDescription");
         LabelDescription->setMaximumSize(QSize(120, 16777215));
 
         gridLayout->addWidget(LabelDescription, 1, 0, 1, 1);
 
-        LabelValue = new QLabel(RecordDisplayFrame);
+        LabelValue = new QLabel(LabelsGrid);
         LabelValue->setObjectName("LabelValue");
         LabelValue->setMaximumSize(QSize(120, 16777215));
 
         gridLayout->addWidget(LabelValue, 0, 0, 1, 1);
 
-        LabelTimeSinceMeal = new QLabel(RecordDisplayFrame);
+        LabelTimeSinceMeal = new QLabel(LabelsGrid);
         LabelTimeSinceMeal->setObjectName("LabelTimeSinceMeal");
         LabelTimeSinceMeal->setMaximumSize(QSize(120, 16777215));
 
         gridLayout->addWidget(LabelTimeSinceMeal, 2, 0, 1, 1);
 
-        LabelValueDisplay = new QLabel(RecordDisplayFrame);
+        LabelValueDisplay = new QLabel(LabelsGrid);
         LabelValueDisplay->setObjectName("LabelValueDisplay");
 
         gridLayout->addWidget(LabelValueDisplay, 0, 1, 1, 1);
 
-        LabelDescriptionDisplay = new QLabel(RecordDisplayFrame);
+        LabelDescriptionDisplay = new QLabel(LabelsGrid);
         LabelDescriptionDisplay->setObjectName("LabelDescriptionDisplay");
 
         gridLayout->addWidget(LabelDescriptionDisplay, 1, 1, 1, 1);
 
-        LabelTimeSinceMealDisplay = new QLabel(RecordDisplayFrame);
+        LabelTimeSinceMealDisplay = new QLabel(LabelsGrid);
         LabelTimeSinceMealDisplay->setObjectName("LabelTimeSinceMealDisplay");
 
         gridLayout->addWidget(LabelTimeSinceMealDisplay, 2, 1, 1, 1);
 
 
-        horizontalLayout->addLayout(gridLayout);
+        contentContainer->addWidget(LabelsGrid);
 
-        ButtonEdit = new QPushButton(RecordDisplayFrame);
+        ButtonEdit = new QPushButton(contentContainer_2);
         ButtonEdit->setObjectName("ButtonEdit");
-        ButtonEdit->setMinimumSize(QSize(0, 75));
-        ButtonEdit->setMaximumSize(QSize(75, 75));
+        ButtonEdit->setMinimumSize(QSize(60, 60));
+        ButtonEdit->setMaximumSize(QSize(60, 60));
 
-        horizontalLayout->addWidget(ButtonEdit);
+        contentContainer->addWidget(ButtonEdit);
 
-        ButtonDelete = new QPushButton(RecordDisplayFrame);
+        ButtonDelete = new QPushButton(contentContainer_2);
         ButtonDelete->setObjectName("ButtonDelete");
-        ButtonDelete->setMinimumSize(QSize(0, 75));
-        ButtonDelete->setMaximumSize(QSize(75, 75));
+        ButtonDelete->setMinimumSize(QSize(60, 60));
+        ButtonDelete->setMaximumSize(QSize(60, 60));
 
-        horizontalLayout->addWidget(ButtonDelete);
+        contentContainer->addWidget(ButtonDelete);
 
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        verticalLayout_2->addWidget(contentContainer_2);
 
 
         retranslateUi(RecordDisplayFrame);

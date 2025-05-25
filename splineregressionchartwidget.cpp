@@ -70,6 +70,7 @@ SplineRegressionChartWidget::SplineRegressionChartWidget(const std::vector<Recor
     ui->SplineRegChartView->setChart(chart);
     ui->SplineRegChartView->setRenderHint(QPainter::Antialiasing);
     ui->LabelStandardDeviation->setText(QString("Standard Deviation: %1").arg(bfl.stddev, 0, 'f', 2));
+    ui->SplineRegChartView->setMinimumHeight(200);
 }
 
 SplineRegressionChartWidget::~SplineRegressionChartWidget()

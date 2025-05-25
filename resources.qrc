@@ -8,4 +8,7 @@
     <qresource>
         <file>icons/EditButton.svg</file>
     </qresource>
+    <qresource>
+        <file>images/bgimg.png</file>
+    </qresource>
 </RCC>

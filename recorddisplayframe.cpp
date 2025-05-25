@@ -15,13 +15,14 @@ RecordDisplayFrame::RecordDisplayFrame(QWidget *parent)
 {
     ui->setupUi(this);
 
+    int icon_size = 30;
+
     ui->ButtonDelete->setStyleSheet(R"(
         QPushButton {
             background-color: #3498db;
             color: white;
-            border: none;
-            border-radius: 25px;  /* Half of width/height to make it round */
-            font-size: 50px;
+            border: 1px solid white;
+            border-radius: 30px;  /* Half of width/height to make it round */
         }
         QPushButton:hover {
             background-color: #2980b9;
@@ -31,17 +32,15 @@ RecordDisplayFrame::RecordDisplayFrame(QWidget *parent)
         }
     )");
     ui->ButtonDelete->setIcon(QIcon(":/icons/DeleteButton.svg"));
-    ui->ButtonDelete->setIconSize(QSize(75,75));
+    ui->ButtonDelete->setIconSize(QSize(icon_size, icon_size));
     ui->ButtonDelete->setText("");
 
     ui->ButtonEdit->setStyleSheet(R"(
         QPushButton {
             background-color: #3498db;
             color: white;
-            border: none;
-            border-radius: 25px;  /* Half of width/height to make it round */
-            font-size: 50px;
-            box-shadow: 10px 10px;
+            border: 1px solid white;
+            border-radius: 30px;  /* Half of width/height to make it round */
         }
         QPushButton:hover {
             background-color: #2980b9;
@@ -51,7 +50,7 @@ RecordDisplayFrame::RecordDisplayFrame(QWidget *parent)
         }
     )");
     ui->ButtonEdit->setIcon(QIcon(":/icons/EditButton.svg"));
-    ui->ButtonEdit->setIconSize(QSize(75,75));
+    ui->ButtonEdit->setIconSize(QSize(icon_size, icon_size));
     ui->ButtonEdit->setText("");
 }
 

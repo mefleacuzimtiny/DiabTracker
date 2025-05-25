@@ -48,7 +48,7 @@ rec_vect parseCSV(std::ifstream& file) {
     char c;
     while (file.get(c)) {
         if (c == '"') {
-            insideQuotes = !insideQuotes; // Toggle quote state
+            insideQuotes = !insideQuotes; // toggle quote state
         } else if (c == ',') {
             if (insideQuotes) {
                 currentField += c;
@@ -60,7 +60,7 @@ rec_vect parseCSV(std::ifstream& file) {
             }
         } else if (c == '\n') {
             if (insideQuotes) {
-                currentField += c; // Preserve newline inside quotes
+                currentField += c; // preserve newline inside quotes
             } else {
                 currentRecord[fieldIndex] = currentField;
                 records.push_back(currentRecord);
@@ -75,7 +75,7 @@ rec_vect parseCSV(std::ifstream& file) {
         }
     }
 
-    // Handle last record if file doesn’t end with newline
+    // handle last record if file doesn’t end with newline
     if (!currentField.empty() || fieldIndex == 3) {
         currentRecord[fieldIndex] = currentField;
         records.push_back(currentRecord);

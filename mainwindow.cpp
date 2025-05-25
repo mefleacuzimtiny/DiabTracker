@@ -42,18 +42,38 @@ void MainWindow::resizeEvent(QResizeEvent* event) {
         ui->centralwidget->height() - btnHeight - margin
         );
 
+    ui->centralwidget->setStyleSheet(R"(
+        QScrollBar:vertical {
+            border: none;
+            background: #f0f0f0;
+            width: 12px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        QScrollBar::handle:vertical {
+            background: #888;
+            min-height: 20px;
+            border-radius: 6px;
+        }
+
+        QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+            height: 0px;
+            background: none;
+        }
+
+        QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+            background: none;
+        }
+    )");
+
     ui->AddButton->setStyleSheet(R"(
         QPushButton {
             color: white;
-            border: 2px solid #d6b5d2;
+            border: 2px solid white;
+            background: #ebb45f;
             border-radius: 25px;  /* Half of width/height to make it round */
         }
         QPushButton:hover {
-            background: qlineargradient(
-                x1:0, y1:0, x2:0, y2:1,
-                stop:0 #fddce3,   /* lighter orange */
-                stop:1 #f4b3bb    /* deeper orange */
-            );
             color: #d6b5d2;
             background-color: #fddce3;
         }
@@ -65,6 +85,8 @@ void MainWindow::resizeEvent(QResizeEvent* event) {
     ui->AddButton->setIcon(QIcon(":/icons/AddButton.svg"));     // looks inside the resources.qrc file we made to search for the svg
     ui->AddButton->setIconSize(QSize(45, 45));  // Adjust size
     ui->AddButton->setText("");  // No text
+
+    ui->StatsScrollArea->setWidgetResizable(true);
 }
 
 MainWindow::~MainWindow() {
@@ -192,6 +214,5 @@ void MainWindow::on_GenStatsButton_clicked()
     QGridLayout* Stats = getStatsLayout();
 
     genRegression(Stats);
-    genSplineRegression(Stats);
 }
 

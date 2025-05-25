@@ -56,6 +56,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(808, 640);
+        MainWindow->setStyleSheet(QString::fromUtf8(""));
         MainWindow->setAnimated(true);
         MainWindow->setTabShape(QTabWidget::TabShape::Rounded);
         actionHistory = new QAction(MainWindow);
@@ -66,24 +67,31 @@ public:
         actionSave_Data->setObjectName("actionSave_Data");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        centralwidget->setStyleSheet(QString::fromUtf8(""));
         AddButton = new QPushButton(centralwidget);
         AddButton->setObjectName("AddButton");
         AddButton->setGeometry(QRect(710, 520, 50, 50));
         AddButton->setMinimumSize(QSize(50, 50));
+        AddButton->setAutoDefault(false);
+        AddButton->setFlat(false);
         gridLayout_2 = new QGridLayout(centralwidget);
         gridLayout_2->setObjectName("gridLayout_2");
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName("tabWidget");
+        tabWidget->setStyleSheet(QString::fromUtf8(""));
         History = new QWidget();
         History->setObjectName("History");
+        History->setStyleSheet(QString::fromUtf8("background-color: rgb(55, 72, 86);"));
         verticalLayout_2 = new QVBoxLayout(History);
         verticalLayout_2->setObjectName("verticalLayout_2");
         HistoryScrollArea = new QScrollArea(History);
         HistoryScrollArea->setObjectName("HistoryScrollArea");
+        HistoryScrollArea->setStyleSheet(QString::fromUtf8(""));
         HistoryScrollArea->setWidgetResizable(true);
         HistoryContents = new QWidget();
         HistoryContents->setObjectName("HistoryContents");
         HistoryContents->setGeometry(QRect(0, 0, 758, 532));
+        HistoryContents->setStyleSheet(QString::fromUtf8(""));
         verticalLayout = new QVBoxLayout(HistoryContents);
         verticalLayout->setObjectName("verticalLayout");
         verticalSpacer = new QSpacerItem(20, 264, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -107,10 +115,12 @@ public:
         StatsScrollArea = new QScrollArea(Statistics);
         StatsScrollArea->setObjectName("StatsScrollArea");
         StatsScrollArea->setMinimumSize(QSize(0, 496));
+        StatsScrollArea->setFrameShape(QFrame::Shape::Box);
+        StatsScrollArea->setFrameShadow(QFrame::Shadow::Raised);
         StatsScrollArea->setWidgetResizable(true);
         StatsContents = new QWidget();
         StatsContents->setObjectName("StatsContents");
-        StatsContents->setGeometry(QRect(0, 0, 758, 496));
+        StatsContents->setGeometry(QRect(0, 0, 756, 494));
         gridLayout = new QGridLayout(StatsContents);
         gridLayout->setObjectName("gridLayout");
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -126,6 +136,8 @@ public:
         gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
+        tabWidget->raise();
+        AddButton->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 808, 25));
@@ -139,6 +151,7 @@ public:
 
         retranslateUi(MainWindow);
 
+        AddButton->setDefault(false);
         tabWidget->setCurrentIndex(0);
 
 

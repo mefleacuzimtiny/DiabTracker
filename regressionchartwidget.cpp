@@ -70,6 +70,7 @@ RegressionChartWidget::RegressionChartWidget(const std::vector<RecordDisplayFram
     ui->LinRegChartView->setChart(chart);
     ui->LinRegChartView->setRenderHint(QPainter::Antialiasing);
     ui->LabelStandardDeviation->setText(QString("Standard Deviation: %1").arg(bfl.stddev, 0, 'f', 2));
+    ui->LinRegChartView->setMinimumHeight(200);
 }
 
 RegressionChartWidget::~RegressionChartWidget()
