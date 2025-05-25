@@ -3,3 +3,5 @@
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_recorddialog.cpp"
 #include "EWIEGA46WW/moc_recorddisplayframe.cpp"
+#include "EWIEGA46WW/moc_regressionchartwidget.cpp"
+#include "EWIEGA46WW/moc_splineregressionchartwidget.cpp"

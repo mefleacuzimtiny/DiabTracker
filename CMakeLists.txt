@@ -31,6 +31,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         HistoryData.h HistoryData.cpp
         Statistics.h
         Statistics.cpp
+        regressionchartwidget.h regressionchartwidget.cpp regressionchartwidget.ui
+        splineregressionchartwidget.h splineregressionchartwidget.cpp splineregressionchartwidget.ui
 
 
     )

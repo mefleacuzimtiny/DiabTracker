@@ -655,8 +655,14 @@ DiabetesTracker_autogen/timestamp: \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddialog.h \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.cpp \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.h \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/regressionchartwidget.cpp \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/regressionchartwidget.h \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/splineregressionchartwidget.cpp \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/splineregressionchartwidget.h \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/editrecorddialog.ui \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/mainwindow.ui \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddialog.ui \
 	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.ui \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/regressionchartwidget.ui \
+	C:/Users/MeFlea/Desktop/First\ Sem\ Projects/DiabTrackerQT/DiabetesTracker/splineregressionchartwidget.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

@@ -45,6 +45,7 @@ public:
     QScrollArea *StatsScrollArea;
     QWidget *StatsContents;
     QGridLayout *gridLayout;
+    QSpacerItem *verticalSpacer_2;
     QPushButton *AddButton;
     QMenuBar *menubar;
     QMenu *menuFile;
@@ -106,6 +107,10 @@ public:
         StatsContents->setGeometry(QRect(0, 0, 763, 494));
         gridLayout = new QGridLayout(StatsContents);
         gridLayout->setObjectName("gridLayout");
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 0, 0, 1, 1);
+
         StatsScrollArea->setWidget(StatsContents);
 
         verticalLayout_3->addWidget(StatsScrollArea);

@@ -27,6 +27,8 @@ public:
     void genRegression(QGridLayout* Stats);
     void genSplineRegression(QGridLayout* Stats);
 
+    void resizeEvent(QResizeEvent* event) override;
+
 
 private slots:
     void on_actionOpen_History_triggered();

@@ -5,6 +5,8 @@
 #include "recorddisplayframe.h"
 #include "HistoryData.h"
 #include "Statistics.h"
+#include "regressionchartwidget.h"
+#include "splineregressionchartwidget.h"
 
 #include <QLabel>
 #include <QDateTime>
@@ -25,6 +27,18 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    ui->AddButton->raise(); // Ensure it's above other widgets
+    ui->AddButton->move(this->width() - 70, this->height() - 70); // Adjust as needed
+}
+
+void MainWindow::resizeEvent(QResizeEvent* event) {
+    QMainWindow::resizeEvent(event);
+
+    // Move the button to bottom-right with some margin
+    int margin = 20;
+    int btnWidth = ui->AddButton->width();
+    int btnHeight = ui->AddButton->height();
+    ui->AddButton->move(this->width() - btnWidth - margin, this->height() - btnHeight - margin);
 }
 
 MainWindow::~MainWindow() {
@@ -42,65 +56,8 @@ QGridLayout *MainWindow::getStatsLayout()
 
 void MainWindow::genRegression(QGridLayout* Stats)
 {
-    QLineSeries *series = new QLineSeries();
-    series->setName("Glucose Level");
-
-    for (RecordDisplayFrame* recdisp: HistoryData) {                                        // each call to series->append() adds a QPointF object
-        series->append(recdisp->DateTimeCreation.toMSecsSinceEpoch(), recdisp->Reading);    // to the QLineSeries. Read the code below to understand more
-    }
-
-    if (series->points().isEmpty()) {
-        QMessageBox::information(this, "No Data", "No records found in the selected date range.");
-        return;
-    }
-
-    // computing linear regression, basically, a whole bunch of math. Look at the equations in the report to get an idea
-    // of what's happening
-    BFLData bfl(series);
-
-    QLineSeries *bestFitSeries = new QLineSeries();
-    bestFitSeries->setName("Best Fit Line");
-    bestFitSeries->append(bfl.xMin, bfl.slope*bfl.xMin + bfl.intercept);    // add a QPointF to the left, and calculate the y-value accordingly
-    bestFitSeries->append(bfl.xMax, bfl.slope*bfl.xMax + bfl.intercept);    // Do the same for the right point... when it gets drawn, you get a straight line b/w 2 points
-
-    // building chart
-    QChart *chart = new QChart();           // you can add multiple plots on the same chart using different QLineSeries
-    chart->addSeries(series);               // for the raw data (the jagged blue line)
-    chart->addSeries(bestFitSeries);        // for the best-fit line (the straight green line)
-    chart->setTitle("Glucose Levels Over Time (with Best Fit Line)");
-
-    // setting x axis
-    QDateTimeAxis *axisX = new QDateTimeAxis;
-    axisX->setFormat("MMM dd hh:mm");
-    axisX->setTitleText("Date & Time");
-    axisX->setTickCount(5);
-    chart->addAxis(axisX, Qt::AlignBottom);
-    series->attachAxis(axisX);
-    bestFitSeries->attachAxis(axisX);
-
-    // setting y axis
-    QValueAxis *axisY = new QValueAxis;
-    axisY->setLabelFormat("%i");
-    axisY->setTitleText("Glucose Level (mg/dL)");
-    chart->addAxis(axisY, Qt::AlignLeft);
-    series->attachAxis(axisY);
-    bestFitSeries->attachAxis(axisY);
-
-    // axisY->setRange(80, 160); making the y-axis scale dynamic to sizes
-    double padding = (bfl.yMax - bfl.yMin) * 0.1;       // 10% padding
-    if (padding == 0) {
-        padding = 10;                     // fallback if all values are the same
-    }
-
-    axisY->setRange(bfl.yMin - padding, bfl.yMax + padding);
-
-    QLabel *stddevLabel = new QLabel(QString("Standard Deviation: %1").arg(bfl.stddev, 0, 'f', 2));  // format to 2 decimal places
-    Stats->addWidget(stddevLabel, 1, 0);  // Place it below the chart (row 1, column 0)
-
-    // Chart view
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-    Stats->addWidget(chartView, 0, 0);
+    RegressionChartWidget* regchart = new RegressionChartWidget(HistoryData);
+    Stats->addWidget(regchart, 0, 0);   // Place it at (row 0, column 0)
 
     ui->StatsScrollArea->widget()->adjustSize();
 
@@ -109,57 +66,12 @@ void MainWindow::genRegression(QGridLayout* Stats)
 
 void MainWindow::genSplineRegression(QGridLayout* Stats)
 {
-    QSplineSeries *series = new QSplineSeries();
-    series->setName("Glucose Level");
+    SplineRegressionChartWidget* splinechart = new SplineRegressionChartWidget(HistoryData);
+    Stats->addWidget(splinechart, 1, 0);   // Place it at (row 0, column 0)
 
-    for (RecordDisplayFrame* recdisp : HistoryData) {
-        series->append(recdisp->DateTimeCreation.toMSecsSinceEpoch(), recdisp->Reading);
-    }
+    ui->StatsScrollArea->widget()->adjustSize();
 
-    if (series->points().isEmpty()) {
-        QMessageBox::information(this, "No Data", "No records found in the selected date range.");
-        return;
-    }
-
-    BFLData bfl(series);
-
-    QLineSeries *bestFitSeries = new QLineSeries();
-    bestFitSeries->setName("Best Fit Line");
-    bestFitSeries->append(bfl.xMin, bfl.slope * bfl.xMin + bfl.intercept);
-    bestFitSeries->append(bfl.xMax, bfl.slope * bfl.xMax + bfl.intercept);
-
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->addSeries(bestFitSeries);
-    chart->setTitle("Glucose Levels Over Time (Spline with Best Fit Line)");
-
-    // X axis (DateTime)
-    QDateTimeAxis *axisX = new QDateTimeAxis;
-    axisX->setFormat("MMM dd hh:mm");
-    axisX->setTitleText("Date & Time");
-    axisX->setTickCount(5);
-    chart->addAxis(axisX, Qt::AlignBottom);
-    series->attachAxis(axisX);
-    bestFitSeries->attachAxis(axisX);
-
-    // Y axis (Glucose level)
-    QValueAxis *axisY = new QValueAxis;
-    axisY->setLabelFormat("%i");
-    axisY->setTitleText("Glucose Level (mg/dL)");
-    chart->addAxis(axisY, Qt::AlignLeft);
-    series->attachAxis(axisY);
-    bestFitSeries->attachAxis(axisY);
-
-    double padding = (bfl.yMax - bfl.yMin) * 0.1;
-    if (padding == 0) padding = 10;
-    axisY->setRange(bfl.yMin - padding, bfl.yMax + padding);
-
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-
-    Stats->addWidget(chartView, 2, 0);
-
-    Stats->setRowStretch(2, 1);
+    Stats->setRowStretch(0, 1);
 }
 
 
@@ -256,6 +168,6 @@ void MainWindow::on_GenStatsButton_clicked()
     QGridLayout* Stats = getStatsLayout();
 
     genRegression(Stats);
-    // genSplineRegression(Stats);
+    genSplineRegression(Stats);
 }
 

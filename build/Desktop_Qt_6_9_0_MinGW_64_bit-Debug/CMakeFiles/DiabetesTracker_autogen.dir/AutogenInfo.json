@@ -423,6 +423,18 @@
 			"MU",
 			"EWIEGA46WW/moc_recorddisplayframe.cpp",
 			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/regressionchartwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_regressionchartwidget.cpp",
+			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/splineregressionchartwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_splineregressionchartwidget.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -534,6 +546,16 @@
 		],
 		[
 			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/recorddisplayframe.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/regressionchartwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/MeFlea/Desktop/First Sem Projects/DiabTrackerQT/DiabetesTracker/splineregressionchartwidget.cpp",
 			"MU",
 			null
 		]
