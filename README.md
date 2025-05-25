@@ -5,7 +5,7 @@ This application is a Qt-based GUI for tracking glucose levels and performing li
 ---
 
 ## 📁 Project Structure
-Ensure that the project has the following folder structure. All the files must be included in the CMakeLists file. All the necessary files are in the main folder, besides the images and icons directories. QtCreator should handle the rest.
+Ensure that the project has the following folder structure. All the files must be included in the CMakeLists file. All the necessary files are in the main folder, besides the images and icons directories. QtCreator should handle the rest. The CMakeLists I included does add QtCharts to the project, however, you might have to include it manually.
 ```
 .
 ├── CMakeLists.txt # Project build configuration
@@ -80,4 +80,4 @@ Make sure the following are installed via the Qt Maintenance Tool:
 
 ## 🖼️ Credits
 
-Icons in `icons/` are likely sourced from open icon packs such as Material Design or Feather.
+Icons were generated using ChatGPT using XML and SVG code
