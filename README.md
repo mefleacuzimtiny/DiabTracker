@@ -1,11 +1,12 @@
 # 📊 Record Viewer & Regression Analysis App
 
-This application is a Qt-based GUI for managing historical data records and performing linear/spline regression visualization. It features dialogs for adding/editing records, displays for viewing historical data, and dynamic charts for regression analysis.
+This application is a Qt-based GUI for tracking glucose levels and performing linear regression visualization. It features dialogs for adding/editing records, displays for viewing historical data, and dynamic charts for regression analysis.
 
 ---
 
 ## 📁 Project Structure
-
+Ensure that the project has the following folder structure. All the files must be included in the CMakeLists file. All the necessary files are in the main folder, besides the images and icons directories. QtCreator should handle the rest.
+```
 .
 ├── CMakeLists.txt # Project build configuration
 ├── main.cpp # Entry point
@@ -14,17 +15,13 @@ This application is a Qt-based GUI for managing historical data records and perf
 ├── icons/ # UI icons (SVG)
 ├── images/ # Background and other UI images
 └── resources.qrc # Qt resource file
-
-markdown
-Copy
-Edit
-
+```
 ---
 
 ## ✅ Features
 
 - 📂 Add, edit, and delete data records
-- 📈 Linear and spline regression visualizations
+- 📈 Linear regression visualizations
 - 🧮 Statistical summary computation (mean, stddev, etc)
 - 🎨 Modern Qt-based user interface using `.ui` files and SVG icons
 
